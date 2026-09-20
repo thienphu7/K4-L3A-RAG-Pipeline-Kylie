@@ -5,8 +5,18 @@ Dùng cùng corpus chunks với Task 5. BM25 phù hợp với từ khóa chính 
 liệu và tên riêng. Output phải theo SearchResult và sort score giảm dần.
 """
 
+from .task4_chunking_indexing import chunk_documents, load_documents
+
 
 CORPUS: list[dict] = []
+
+
+def _get_corpus() -> list[dict]:
+    """Load the same chunks as indexing when no corpus was injected."""
+    global CORPUS
+    if not CORPUS:
+        CORPUS = chunk_documents(load_documents())
+    return CORPUS
 
 
 def build_bm25_index(corpus: list[dict]):
@@ -41,15 +51,26 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     #         "retrieval_method": "bm25",
     #     })
     # return results
-    if top_k <= 0 or not CORPUS:
+    corpus = _get_corpus()
+    if top_k <= 0 or not corpus:
         return []
-    scores = build_bm25_index(CORPUS).get_scores(query.lower().split())
+    query_tokens = query.lower().split()
+    scores = build_bm25_index(corpus).get_scores(query_tokens)
     ranked = sorted(enumerate(scores), key=lambda pair: pair[1], reverse=True)
-    return [{"id": CORPUS[i]["id"], "content": CORPUS[i]["content"], "score": float(score),
-             "metadata": CORPUS[i]["metadata"], "retrieval_method": "bm25"}
-            for i, score in ranked[:top_k] if score > 0]
+    results = []
+    for i, score in ranked[:top_k]:
+        # BM25 can legitimately return 0 when a query term appears in half of
+        # a tiny corpus (its IDF is then zero). Preserve lexical matches while
+        # still excluding documents with no query-token overlap.
+        tokens = set(corpus[i]["content"].lower().split())
+        if not tokens.intersection(query_tokens):
+            continue
+        results.append({"id": corpus[i]["id"], "content": corpus[i]["content"],
+                        "score": float(score), "metadata": corpus[i]["metadata"],
+                        "retrieval_method": "bm25"})
+    return results
 
 
 if __name__ == "__main__":
-    for result in lexical_search("test query", top_k=3):
+    for result in lexical_search("phạt nguội", top_k=3):
         print(result)

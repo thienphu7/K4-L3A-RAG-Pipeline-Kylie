@@ -46,4 +46,7 @@ def rerank_rrf(
 
 
 if __name__ == "__main__":
-    print("Implement rerank_rrf, then run contract tests.")
+    dense = [{"id": "demo-1", "score": 0.9}, {"id": "demo-2", "score": 0.8}]
+    bm25 = [{"id": "demo-2", "score": 4.0}, {"id": "demo-3", "score": 3.0}]
+    for result in rerank_rrf([dense, bm25], top_k=3):
+        print(result)
