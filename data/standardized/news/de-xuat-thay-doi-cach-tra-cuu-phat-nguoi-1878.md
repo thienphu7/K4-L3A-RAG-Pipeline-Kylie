@@ -1,0 +1,37 @@
+# Đề xuất thay đổi cách tra cứu 'phạt nguội'
+
+**Source:** https://phapluat.gov.vn/tin-tuc/chinh-sach-moi/de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878
+
+**Crawled:** 2026-09-20T07:50:39.795624+00:00
+
+---
+
+Đề xuất thay đổi cách tra cứu 'phạt nguội'
+15/04/2026
+05:48
+Đặt lại–
+100%
++
+## Dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, thay vì phải kiểm tra dữ liệu phạt nguội đồng thời trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay.
+![](https://s3-han02.fptcloud.com/cplqg-vn/ef1fea0b-bf0a-47e1-86e3-d8631f06b791.jpg?width=777&height=518)
+_Nhiều trường hợp đã nộp phạt nguội nhưng vẫn bị từ chối đăng kiểm do hệ thống chưa cập nhật, vẫn hiển thị trạng thái "chưa xử phạt" - Ảnh: Báo XD._
+Bộ Xây dựng đang lấy ý kiến góp ý cho dự thảo Thông tư quy định về: trình tự, thủ tục kiểm định và miễn kiểm định lần đầu đối với xe cơ giới, xe máy chuyên dùng; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với phương tiện cải tạo; cũng như kiểm định khí thải đối với xe mô tô, xe gắn máy. Dự thảo này sẽ thay thế Thông tư 47/2024/TT-BGTVT.
+## Chỉ tra dữ liệu phương tiện vi phạm trên phần mềm Cục Đăng kiểm Việt Nam
+Điểm nhấn đáng chú ý của dự thảo là quy định rõ: dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, theo quy định tại khoản 1 Điều 43 của Luật TTATGT đường bộ.
+Cục Đăng kiểm Việt Nam cho biết, việc bổ sung quy định này nhằm hướng dẫn các cơ sở đăng kiểm cách thức thực hiện, xác định phương tiện bị từ chối kiểm định do chưa khắc phục vi phạm hành chính về trật tự, an toàn giao thông đường bộ.
+Như vậy, thay vì phải kiểm tra dữ liệu phạt nguội đồng thời trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay, khi quy định mới được thông qua, các cơ sở đăng kiểm sẽ chỉ kiểm tra trên dữ liệu của Cục Đăng kiểm.
+Đặc biệt, tại Điều 14 của dự thảo Thông tư về xử lý các trường hợp phát sinh, nêu rõ: nếu hệ thống thông tin phương tiện vi phạm của Cục Đăng kiểm vẫn thể hiện trạng thái "chưa hoàn thành khắc phục", nhưng chủ xe cung cấp được bằng chứng đã khắc phục (gồm biên bản, quyết định xử phạt và biên lai nộp phạt), thì cơ sở đăng kiểm sẽ cập nhật các tài liệu này lên hệ thống làm căn cứ và thực hiện kiểm định cho phương tiện.
+Theo các cơ sở đăng kiểm, quy định này tạo điều kiện thuận lợi tối đa cho người dân, doanh nghiệp. Thực tế thời gian qua, nhiều trường hợp đã nộp phạt nguội nhưng vẫn bị từ chối đăng kiểm do hệ thống chưa cập nhật, vẫn hiển thị trạng thái "chưa xử phạt".
+Cục Đăng kiểm Việt Nam cho biết thêm, quy định mới thể hiện tinh thần lấy người dân làm trung tâm, minh bạch hóa quy trình xử lý, tránh việc từ chối kiểm định vô lý khi chủ xe đã hoàn thành nghĩa vụ nộp phạt, gây lãng phí thời gian và công sức.
+Ngoài ra, dự thảo Thông tư cũng bổ sung hướng dẫn xử lý trong trường hợp phần mềm tra cứu thông tin phương tiện vi phạm của Cục Đăng kiểm hoặc việc chia sẻ dữ liệu đăng ký xe từ cơ quan công an gặp sự cố bất khả kháng.
+Theo đó, cơ sở đăng kiểm vẫn thực hiện kiểm định theo quy định. Khi sự cố được khắc phục, nếu phát hiện phương tiện thuộc diện bị từ chối kiểm định, cơ sở đăng kiểm sẽ thông báo cho chủ xe, đồng thời thu hồi giấy chứng nhận và tem kiểm định. Nếu không thuộc diện bị từ chối, sẽ phát hành giấy chứng nhận và thông báo cho chủ xe.
+### Buộc tra cứu dữ liệu đăng ký xe khi tiếp nhận đăng kiểm
+Tại Điều 14 dự thảo, Bộ Xây dựng cũng đề xuất hướng xử lý các trường hợp phát sinh liên quan đến lập hồ sơ phương tiện và tra cứu dữ liệu đăng ký xe.
+Cụ thể, nếu không thể sử dụng phần mềm quản lý kiểm định do sự cố bất khả kháng, cơ sở đăng kiểm được phép lập hồ sơ giấy. Sau khi hệ thống được khôi phục, phải cập nhật dữ liệu đầy đủ vào hệ thống.
+Trường hợp phát hiện thông tin xe sản xuất, lắp ráp hoặc nhập khẩu không khớp với thực tế, cơ sở đăng kiểm sẽ dừng lập hồ sơ, thông báo cho chủ xe và phản hồi về Cục Đăng kiểm để phối hợp xử lý. Chỉ tiếp tục khi có xác nhận phù hợp.
+Đối với xe bị tịch thu, đấu giá nhưng không có dữ liệu trong hệ thống, cơ sở đăng kiểm sẽ lập bản xác nhận thông số kỹ thuật, kèm theo tài liệu chứng minh như công bố của nhà sản xuất hoặc kết quả giám định của cơ quan có thẩm quyền.
+Nếu dữ liệu đăng ký xe không phù hợp với dữ liệu của Cục Đăng kiểm, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và yêu cầu chủ xe liên hệ cơ quan đăng ký xe để xử lý.
+Trường hợp chủ xe xuất trình giấy tờ nhưng không tra cứu được dữ liệu hoặc dữ liệu không khớp, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và thông báo cho cơ quan công an để xử lý theo quy định.
+Như vậy, theo đề xuất mới, dù có giấy tờ đăng ký xe, cơ sở đăng kiểm vẫn bắt buộc đối chiếu với dữ liệu do cơ quan công an cung cấp, nhằm ngăn chặn tình trạng giả mạo giấy tờ.
+Việc bổ sung các phương án xử lý linh hoạt nhưng chặt chẽ trong các tình huống phát sinh không chỉ giúp hệ thống đăng kiểm vận hành thông suốt mà còn tạo "lưới lọc" dữ liệu nhiều tầng, tăng cường quản lý và minh bạch hóa hoạt động kiểm định.
+**Theo Chinhphu.vn**
