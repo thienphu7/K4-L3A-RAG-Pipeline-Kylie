@@ -12,6 +12,14 @@ chạy lại pipeline không tạo dữ liệu trùng. Task 5 phải dùng chung
 """
 
 from pathlib import Path
+import os
+
+from dotenv import load_dotenv
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+from .contracts import validate_document
+
+load_dotenv()
 
 
 STANDARDIZED_DIR = Path(__file__).parent.parent / "data" / "standardized"
@@ -35,7 +43,16 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     # from sentence_transformers import SentenceTransformer
     # model = SentenceTransformer(EMBEDDING_MODEL)
     # return model.encode(texts).tolist()
-    raise NotImplementedError("Implement embed_texts")
+    provider = os.getenv("EMBEDDING_PROVIDER", "local").lower()
+    if provider == "openai":
+        from openai import OpenAI
+        response = OpenAI(api_key=os.getenv("OPENAI_API_KEY")).embeddings.create(
+            model=os.getenv("EMBEDDING_MODEL", "text-embedding-3-small"), input=texts
+        )
+        return [item.embedding for item in response.data]
+    from sentence_transformers import SentenceTransformer
+    model = SentenceTransformer(os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL))
+    return model.encode(texts, normalize_embeddings=True).tolist()
 
 
 def get_collection():
@@ -49,7 +66,10 @@ def get_collection():
     #     name=COLLECTION_NAME,
     #     metadata={"hnsw:space": "cosine"},
     # )
-    raise NotImplementedError("Implement get_collection")
+    import chromadb
+    CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+    client = chromadb.PersistentClient(path=str(CHROMA_DIR))
+    return client.get_or_create_collection(name=COLLECTION_NAME, metadata={"hnsw:space": "cosine"})
 
 
 def load_documents() -> list[dict]:
@@ -70,7 +90,17 @@ def load_documents() -> list[dict]:
     #         },
     #     })
     # return documents
-    raise NotImplementedError("Implement load_documents")
+    documents = []
+    for path in sorted(STANDARDIZED_DIR.rglob("*.md")):
+        content = path.read_text(encoding="utf-8").strip()
+        if not content:
+            continue
+        item = {"id": path.relative_to(STANDARDIZED_DIR).as_posix(), "content": content,
+                "metadata": {"source": path.name, "title": path.stem,
+                             "doc_type": "legal" if "legal" in path.parts else "news", "url": None}}
+        validate_document(item)
+        documents.append(item)
+    return documents
 
 
 def chunk_documents(documents: list[dict]) -> list[dict]:
@@ -92,7 +122,16 @@ def chunk_documents(documents: list[dict]) -> list[dict]:
     #             "metadata": {**document["metadata"], "chunk_index": index},
     #         })
     # return chunks
-    raise NotImplementedError("Implement chunk_documents")
+    splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP,
+                                               separators=["\n\n", "\n", ". ", " ", ""])
+    chunks = []
+    for document in documents:
+        for index, text in enumerate(splitter.split_text(document["content"])):
+            text = text.strip()
+            if text:
+                chunks.append({"id": f"{document['id']}::chunk-{index}", "content": text,
+                               "metadata": {**document["metadata"], "chunk_index": index}})
+    return chunks
 
 
 def embed_chunks(chunks: list[dict]) -> list[dict]:
@@ -103,7 +142,10 @@ def embed_chunks(chunks: list[dict]) -> list[dict]:
     # for chunk, vector in zip(chunks, vectors):
     #     chunk["embedding"] = vector
     # return chunks
-    raise NotImplementedError("Implement embed_chunks")
+    vectors = embed_texts([chunk["content"] for chunk in chunks])
+    if len(vectors) != len(chunks):
+        raise ValueError("embedding count does not match chunk count")
+    return [{**chunk, "embedding": vector} for chunk, vector in zip(chunks, vectors)]
 
 
 def index_to_vectorstore(chunks: list[dict]) -> None:
@@ -117,7 +159,10 @@ def index_to_vectorstore(chunks: list[dict]) -> None:
     #     embeddings=[chunk["embedding"] for chunk in chunks],
     #     metadatas=[chunk["metadata"] for chunk in chunks],
     # )
-    raise NotImplementedError("Implement index_to_vectorstore")
+    if not chunks:
+        return
+    get_collection().upsert(ids=[c["id"] for c in chunks], documents=[c["content"] for c in chunks],
+                            embeddings=[c["embedding"] for c in chunks], metadatas=[c["metadata"] for c in chunks])
 
 
 def run_pipeline() -> None:

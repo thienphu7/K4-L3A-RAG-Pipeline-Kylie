@@ -14,6 +14,9 @@ Cài đặt:
 """
 
 from pathlib import Path
+import json
+
+from markitdown import MarkItDown
 
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
@@ -34,7 +37,16 @@ def convert_legal_docs() -> None:
     #         (output_dir / f"{path.stem}.md").write_text(
     #             result.text_content, encoding="utf-8"
     #         )
-    raise NotImplementedError("Implement convert_legal_docs")
+    legal_dir = LANDING_DIR / "legal"
+    output_dir = OUTPUT_DIR / "legal"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    converter = MarkItDown()
+    for path in sorted(legal_dir.glob("*")):
+        if path.suffix.lower() not in {".pdf", ".doc", ".docx"}:
+            continue
+        text = converter.convert(str(path)).text_content.strip()
+        if text:
+            (output_dir / f"{path.stem}.md").write_text(text + "\n", encoding="utf-8")
 
 
 def convert_news_articles() -> None:
@@ -54,7 +66,18 @@ def convert_news_articles() -> None:
     #     (output_dir / f"{path.stem}.md").write_text(
     #         header + data["content_markdown"], encoding="utf-8"
     #     )
-    raise NotImplementedError("Implement convert_news_articles")
+    news_dir = LANDING_DIR / "news"
+    output_dir = OUTPUT_DIR / "news"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for path in sorted(news_dir.glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        content = str(data.get("content_markdown", "")).strip()
+        if not content:
+            continue
+        header = (f"# {data.get('title', path.stem)}\n\n"
+                  f"**Source:** {data.get('url', '')}\n\n"
+                  f"**Crawled:** {data.get('date_crawled', '')}\n\n---\n\n")
+        (output_dir / f"{path.stem}.md").write_text(header + content + "\n", encoding="utf-8")
 
 
 def convert_all() -> None:
