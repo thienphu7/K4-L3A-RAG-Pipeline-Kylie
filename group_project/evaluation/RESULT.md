@@ -12,7 +12,7 @@
 | Corpus version/commit | `dfbba10`; 6 legal Markdown, 5 news Markdown, 1,834 chunks |
 | Golden dataset size | 16 |
 | `top_k` | 5 |
-| Fallback threshold and calibration | `SCORE_THRESHOLD=0.3`; PageIndex chưa cấu hình, chưa có benchmark threshold riêng |
+| Fallback threshold and calibration | `SCORE_THRESHOLD=0.5`;|
 
 ## Configurations
 
