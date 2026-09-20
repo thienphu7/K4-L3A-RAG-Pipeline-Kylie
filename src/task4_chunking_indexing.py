@@ -46,10 +46,16 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     provider = os.getenv("EMBEDDING_PROVIDER", "local").lower()
     if provider == "openai":
         from openai import OpenAI
-        response = OpenAI(api_key=os.getenv("OPENAI_API_KEY")).embeddings.create(
-            model=os.getenv("EMBEDDING_MODEL", "text-embedding-3-small"), input=texts
-        )
-        return [item.embedding for item in response.data]
+        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        model = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+        embeddings = []
+        # Keep each request comfortably below the provider request-token
+        # limit. The returned order is preserved across batches.
+        batch_size = 32
+        for start in range(0, len(texts), batch_size):
+            response = client.embeddings.create(model=model, input=texts[start:start + batch_size])
+            embeddings.extend(item.embedding for item in response.data)
+        return embeddings
     from sentence_transformers import SentenceTransformer
     model = SentenceTransformer(os.getenv("EMBEDDING_MODEL", EMBEDDING_MODEL))
     return model.encode(texts, normalize_embeddings=True).tolist()
