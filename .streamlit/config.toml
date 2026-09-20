@@ -1,0 +1,4 @@
+[server]
+# The app uses OpenAI embeddings; disable Streamlit's module watcher so
+# optional transformers image processors do not require torchvision.
+fileWatcherType = "none"

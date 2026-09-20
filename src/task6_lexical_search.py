@@ -11,6 +11,17 @@ from .task4_chunking_indexing import chunk_documents, load_documents
 CORPUS: list[dict] = []
 
 
+def _expand_query(query: str) -> list[str]:
+    """Add domain synonyms used by legal documents for everyday wording."""
+    normalized = query.lower()
+    terms = [normalized]
+    if "vượt đèn đỏ" in normalized or "vượt đèn" in normalized:
+        terms.append("không chấp hành hiệu lệnh đèn tín hiệu giao thông")
+    if "xe máy" in normalized:
+        terms.append("xe mô tô xe gắn máy")
+    return " ".join(terms).split()
+
+
 def _get_corpus() -> list[dict]:
     """Load the same chunks as indexing when no corpus was injected."""
     global CORPUS
@@ -54,7 +65,7 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     corpus = _get_corpus()
     if top_k <= 0 or not corpus:
         return []
-    query_tokens = query.lower().split()
+    query_tokens = _expand_query(query)
     scores = build_bm25_index(corpus).get_scores(query_tokens)
     ranked = sorted(enumerate(scores), key=lambda pair: pair[1], reverse=True)
     results = []

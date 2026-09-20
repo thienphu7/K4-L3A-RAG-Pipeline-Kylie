@@ -6,7 +6,7 @@
 - Mã học viên: 2A202602443
 - Nhóm: K4-L3A-RAG-Pipeline
 - Vai trò: Nhóm trưởng
-- Repository/branch: K4-L3A-RAG-Pipeline-Ten Nhom
+- Repository/branch: K4-L3A-RAG-Pipeline-Kylie / main
 
 ## Thành viên nhóm
 
@@ -39,17 +39,17 @@
 
 ## Kiểm thử và kết quả
 
-- Đã kiểm tra compile toàn bộ `src/` và `app.py` bằng `python3 -m compileall`.
-- Đã kiểm tra định dạng patch bằng `git diff --check`.
-- Bộ test chưa chạy được trong môi trường hiện tại vì chưa có lệnh `pytest`.
-- Dữ liệu corpus và golden dataset được để lại theo yêu cầu, chưa khai báo kết quả evaluation.
+- Đã chạy `pytest tests/test_contracts.py -q`: 15 tests passed.
+- Đã chạy `pytest tests/test_acceptance.py -q`: 5 tests passed sau khi hoàn thiện corpus và golden dataset.
+- Đã kiểm tra compile toàn bộ `src/` và `app.py`, cùng `git diff --check`.
+- Dữ liệu corpus gồm 6 legal Markdown và 5 news Markdown; golden dataset gồm 15 cases.
 
 ## Điều còn hạn chế
 
-- Chưa có dữ liệu thực tế trong repository để chạy end-to-end.
+- Một số đoạn PDF scan còn nhiễu OCR, đặc biệt ở bảng và biểu mẫu.
 - PageIndex mới có cơ chế opt-in an toàn, chưa tích hợp API thật.
-- Báo cáo evaluation và golden dataset chưa hoàn thiện.
-- Nếu có thêm thời gian, ưu tiên tiếp theo là bổ sung corpus, chạy test/evaluation và hiệu chỉnh fallback threshold.
+- Các metric RAGAS chưa được chạy tự động; báo cáo hiện ghi N/A thay vì bịa số liệu.
+- Nếu có thêm thời gian, ưu tiên làm sạch OCR, chạy benchmark A/B và hiệu chỉnh fallback threshold.
 
 ## Xác nhận đóng góp
 

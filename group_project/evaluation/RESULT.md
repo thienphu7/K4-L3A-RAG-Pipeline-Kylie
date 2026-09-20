@@ -39,6 +39,15 @@ Các metric tự động chưa có số liệu vì chưa chạy evaluator trên 
 - Evidence: Dense search, BM25 và RRF đã pass contract tests; chưa có điểm metric định lượng.
 - Trade-off về latency/cost: Hybrid thực hiện dense và BM25 rồi fuse; dense-only ít bước hơn, hybrid tận dụng cả ngữ nghĩa và từ khóa chính xác.
 
+### Query normalization note
+
+Một số câu hỏi dùng cách nói đời thường và cần được ánh xạ sang cách diễn đạt trong văn bản pháp luật. Ví dụ:
+
+- Câu hỏi người dùng: **“Xe máy vượt đèn đỏ bị phạt bao nhiêu?”**
+- Cách diễn đạt trong nguồn: **“Không chấp hành hiệu lệnh của đèn tín hiệu giao thông.”**
+
+Pipeline bổ sung mở rộng từ khóa cho nhóm đồng nghĩa này để BM25 và hybrid retrieval tìm được điều khoản phù hợp hơn.
+
 ## Worst performers
 
 | # | Question | Config | Faithfulness | Relevance | Recall | Precision | Failure stage | Root cause |
@@ -60,4 +69,3 @@ Các metric tự động chưa có số liệu vì chưa chạy evaluator trên 
 | Experiment | Baseline | Metric delta | Latency/cost delta | Conclusion |
 |---|---|---:|---:|---|
 | OCR cho legal PDFs | Corpus chỉ có 1 legal Markdown | Chưa đo | Tăng thời gian tiền xử lý và embedding | Cần kiểm tra chất lượng OCR trước khi kết luận |
-
