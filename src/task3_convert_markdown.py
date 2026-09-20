@@ -15,12 +15,50 @@ Cài đặt:
 
 from pathlib import Path
 import json
+import shutil
+import subprocess
+import tempfile
 
 from markitdown import MarkItDown
 
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
 OUTPUT_DIR = Path(__file__).parent.parent / "data" / "standardized"
+
+
+def extract_document_text(path: Path, converter: MarkItDown) -> str:
+    """Extract text directly, with OCR fallback for scanned PDFs."""
+    text = converter.convert(str(path)).text_content.strip()
+    if text or path.suffix.lower() != ".pdf":
+        return text
+
+    ocrmypdf = shutil.which("ocrmypdf")
+    if ocrmypdf is None:
+        raise RuntimeError(
+            f"Không đọc được text từ {path.name} và không tìm thấy OCRmyPDF. "
+            "Hãy cài bằng: brew install ocrmypdf tesseract-lang"
+        )
+
+    print(f"OCR scanned PDF: {path.name}")
+    with tempfile.TemporaryDirectory(prefix="rag-ocr-") as temp_dir:
+        searchable_pdf = Path(temp_dir) / path.name
+        subprocess.run(
+            [
+                ocrmypdf,
+                "--language",
+                "vie+eng",
+                "--rotate-pages",
+                "--deskew",
+                "--skip-text",
+                # Only the temporary OCR copy is changed; the signed source is preserved.
+                "--invalidate-digital-signatures",
+                "--quiet",
+                str(path),
+                str(searchable_pdf),
+            ],
+            check=True,
+        )
+        return converter.convert(str(searchable_pdf)).text_content.strip()
 
 
 def convert_legal_docs() -> None:
@@ -44,9 +82,12 @@ def convert_legal_docs() -> None:
     for path in sorted(legal_dir.glob("*")):
         if path.suffix.lower() not in {".pdf", ".doc", ".docx"}:
             continue
-        text = converter.convert(str(path)).text_content.strip()
+        text = extract_document_text(path, converter)
         if text:
             (output_dir / f"{path.stem}.md").write_text(text + "\n", encoding="utf-8")
+            print(f"Converted: {path.name}")
+        else:
+            print(f"Skipped empty document: {path.name}")
 
 
 def convert_news_articles() -> None:
