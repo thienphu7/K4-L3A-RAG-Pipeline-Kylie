@@ -1,0 +1,870 @@
+{
+  "configuration": {
+    "golden_dataset_size": 16,
+    "top_k": 5,
+    "generator_model": "gpt-4o-mini",
+    "evaluator_model": "gpt-4o-mini",
+    "embedding_model": "text-embedding-3-small"
+  },
+  "configs": {
+    "dense_only": {
+      "summary": {
+        "faithfulness": 0.8447916666666667,
+        "answer_relevancy": 0.5661112299676826,
+        "context_recall": 0.8020833333333334,
+        "context_precision": 0.8225694444106019,
+        "average": 0.7588889185945711,
+        "average_latency_seconds": 2.299334635372361,
+        "source_hit_at_5": 1.0
+      },
+      "samples": [
+        {
+          "case": 1,
+          "user_input": "Từ ngày nào ô tô cá nhân chở trẻ dưới 10 tuổi và cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp?",
+          "response": "Từ ngày 1/7/2026, ô tô cá nhân chở trẻ dưới 10 tuổi và cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp (Document 1).",
+          "retrieved_contexts": [
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "Theo Luật Trật tự, an toàn giao thông đường bộ, từ ngày 1/7/2026, khi chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m trên ô tô, người lái xe không được bố trí trẻ ngồi cùng hàng ghế với người điều khiển, trừ trường hợp xe chỉ có một hàng ghế.\nCùng với đó, người điều khiển phương tiện có trách nhiệm sử dụng hoặc hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em.",
+            "3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô không\nđược cho trẻ em ngồi cùng hàng ghế với người lái xe, trừ loại xe ô tô chỉ có một\nhàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp\ncho trẻ em.\n\nĐiều 11. Chấp hành báo hiệu đường bộ",
+            "Đáng chú ý, quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân. Các phương tiện kinh doanh vận tải hành khách như taxi, xe công nghệ, xe khách không bắt buộc phải lắp đặt thiết bị này khi chở trẻ em.\n**Không sử dụng thiết bị an toàn có thể bị phạt đến 1 triệu đồng**"
+          ],
+          "reference": "Từ ngày 1/7/2026.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 3.588764958025422,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.6282083100309785,
+          "context_recall": 1.0,
+          "context_precision": 0.999999999975
+        },
+        {
+          "case": 2,
+          "user_input": "Quy định thiết bị an toàn cho trẻ em trên ô tô cá nhân có áp dụng bắt buộc cho taxi và xe khách không?",
+          "response": "Quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân và không áp dụng cho các phương tiện kinh doanh vận tải hành khách như taxi và xe khách (Document 1).",
+          "retrieved_contexts": [
+            "Đáng chú ý, quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân. Các phương tiện kinh doanh vận tải hành khách như taxi, xe công nghệ, xe khách không bắt buộc phải lắp đặt thiết bị này khi chở trẻ em.\n**Không sử dụng thiết bị an toàn có thể bị phạt đến 1 triệu đồng**",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "# Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n\n**Source:** https://phapluat.gov.vn/tin-tuc/quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7\n\n**Crawled:** 2026-09-20T07:50:31.800451+00:00\n\n---",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "Một trong các nội dung đáng chú ý của Nghị định số 238/2026/NĐ-CP là bổ sung khoản 1a vào trước khoản 1 Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt hành vi chở trẻ em trên xe mà không sử dụng thiết bị an toàn. Theo đó, phạt cảnh cáo đối với người điều khiển xe ô tô thực hiện hành vi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe mà không sử dụng thiết bị an toàn phù hợp cho trẻ em theo quy định (trừ xe ô tô kinh doanh vận tải hành khách)."
+          ],
+          "reference": "Không. Quy định bắt buộc trong bài viết áp dụng cho ô tô cá nhân; taxi, xe công nghệ và xe khách không bắt buộc lắp thiết bị này khi chở trẻ em.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md"
+          ],
+          "latency_seconds": 3.871722999960184,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5917995846727792,
+          "context_recall": 0.5,
+          "context_precision": 0.8874999999778125
+        },
+        {
+          "case": 3,
+          "user_input": "Mức phạt được nêu cho việc ô tô chở trẻ dưới 10 tuổi, cao dưới 1,35 m không sử dụng thiết bị an toàn phù hợp là bao nhiêu?",
+          "response": "Mức phạt cho việc ô tô chở trẻ dưới 10 tuổi, cao dưới 1,35 m không sử dụng thiết bị an toàn phù hợp là từ 800.000 đồng đến 1 triệu đồng (Document 1).",
+          "retrieved_contexts": [
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "\"La.  Phat  cảnh  cáo  đối  với  người  điều  khiển  xe  ô  tô  thực  hiện  hành  vi  chở\ntrẻ  em  đưới  10  tudi  và  chiêu  cao  đưới  1,35  mét trên  xe  mà  không  sử  dụng  thiết\n\nbị  an  toàn  phù hợp  cho trẻ  em  theo quy định (trừ xe ô  tô  kinh doanh vận tải  hành\n\nkhách).\".\n\n2,  Sửa  đôi,  bỗ  sung  điểm  m  khoản  3  như sau:\n\n\"m)  Chở trẻ  em  dưới  10  tuổi  và  chiều  cao  dưới  1,35  mét  trên  xe ô  tô  ngồi",
+            "Đáng chú ý, quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân. Các phương tiện kinh doanh vận tải hành khách như taxi, xe công nghệ, xe khách không bắt buộc phải lắp đặt thiết bị này khi chở trẻ em.\n**Không sử dụng thiết bị an toàn có thể bị phạt đến 1 triệu đồng**",
+            "Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp\n30/06/2026\n09:01\nĐặt lại–\n100%\n+\n![Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp](https://s3-han02.fptcloud.com/cplqg-vn/22ae41e3-4bd8-48c9-85ea-3aca784e18c0.jpg)"
+          ],
+          "reference": "Từ 800.000 đồng đến 1.000.000 đồng theo nội dung bài viết về Nghị định 168/2024/NĐ-CP.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "nghi-dinh-238-2026-nd-cp.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md"
+          ],
+          "latency_seconds": 2.0282462500035763,
+          "faithfulness": 0.5,
+          "answer_relevancy": 0.6677577324485201,
+          "context_recall": 1.0,
+          "context_precision": 0.999999999975
+        },
+        {
+          "case": 4,
+          "user_input": "CRS được chia thành những nhóm cân nặng nào?",
+          "response": "CRS được chia thành 5 nhóm theo cân nặng của trẻ như sau:\n\n1. Nhóm 0 dành cho trẻ có cân nặng dưới 10 kg.\n2. Nhóm 0+ dành cho trẻ có cân nặng dưới 13 kg.\n3. Nhóm I dành cho trẻ có cân nặng từ 9 kg đến 18 kg.\n4. Nhóm II dành cho trẻ có cân nặng từ 15 kg đến 25 kg.\n5. Nhóm III dành cho trẻ có cân nặng từ 22 kg đến 36 kg (Document 1).",
+          "retrieved_contexts": [
+            "Nhóm 0 dành cho trẻ có cân nặng dưới 10 kg.\nNhóm 0+ dành cho trẻ có cân nặng dưới 13 kg.\nNhóm I dành cho trẻ có cân nặng từ 9 kg đến 18 kg.\nNhóm II dành cho trẻ có cân nặng từ 15 kg đến 25 kg.\nNhóm III dành cho trẻ có cân nặng từ 22 kg đến 36 kg.\nNgoài cách phân nhóm theo cân nặng, CRS còn được phân thành các loại theo phạm vi sử dụng, gồm loại phổ thông, loại hạn chế, loại bán phổ thông và loại dành cho xe đặc biệt.",
+            "Thiết bị an toàn bao gồm Hệ thống ghế trẻ em CRS, tức Child Restraint System, và Hệ thống ghế trẻ em nâng cao ECRS, tức Enhanced Child Restraint System.\nTrong đó, Hệ thống ghế trẻ em CRS là tổ hợp gồm ghế, dây đai, khóa an toàn, thiết bị điều chỉnh cùng các phụ kiện như nôi hoặc tấm chắn va chạm, được thiết kế để lắp đặt chắc chắn lên ô tô.\nHệ thống ghế trẻ em CRS được chia thành 5 nhóm theo cân nặng của trẻ:\nNhóm 0 dành cho trẻ có cân nặng dưới 10 kg.",
+            "2  làm nhivệụ mkhẩn  cấp  Đỏ  16+  60,5  = 10,8  \" 60.  240  i.\n|     | Xe của lực lượng cônagn   |     |     |     |     | .   | .   |     |     |     |     | ‘a  tho dan  |     | Z2 Bộ  |\n| --- | ------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------ | --- | ------ |\n3  |lamnhiệmvụkháncáp\n|     |     |     |     | | Xanh-Đẻ|  |     |     | 16+  60,5  |     | 2108  |     |     | G07 240  |     | hey  |",
+            "| 2|  quân sự làm nhiệm vụ |5  |                  | 00+  16001100 + 200)  |     |                         |     |       |\nkhẩn cấp\n| Xe  | của  lực  lượng  |     |     |     |     |     |\n| --- | ---------------- | --- | --- | --- | --- | --- |\n3  |côngan làm nhiệm vụ  |500+  160011+ 02000)  125 + 135 | 120+  10% | SIREN\nkhan cấp\n| Xe  | của  lực  lượng  |     |     |     |     |     |\n| --- | ---------------- | --- | --- | --- | --- | --- |",
+            "3  làm nhiệm vụ khẩn cấp  500+  1600 | 100  ~200 |  125  +135  | 120 + 10%  SIREN\n|     | Xe  | của  lực  | lượng  kiểm  | sát  |     | R   | h   |     |     | n   |     |     |     |     |\n| --- | --- | --------- | ------------ | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n4  làm nhiệm vụ khan cấp  500+  1600  | 100+200|  125+135  |  180+  10%  WOOP\n|     |     | 2   | ft  .  | A  Ẩ.  |     |     |     |     |     |     |     |     |     |     |"
+          ],
+          "reference": "Nhóm 0 dưới 10 kg; nhóm 0+ dưới 13 kg; nhóm I từ 9 đến 18 kg; nhóm II từ 15 đến 25 kg; nhóm III từ 22 đến 36 kg.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-236-2026-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.889169249974657,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5634890830594377,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999995
+        },
+        {
+          "case": 5,
+          "user_input": "ISOFIX là gì theo bài viết về thiết bị an toàn cho trẻ em?",
+          "response": "ISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng 2 neo cố định trên xe và 2 cơ cấu khóa tương ứng trên thiết bị an toàn cho trẻ em, kết hợp với cơ cấu chống xoay, chống lật (Document 5).",
+          "retrieved_contexts": [
+            "ISOFIX toàn diện là hệ thống ISOFIX có thêm dây buộc trên cùng hoặc chân đỡ để chống xoay hệ thống ghế trẻ em. Trong đó, ghế trẻ em tích hợp ISOFIX toàn diện, i-Size, là hệ thống phù hợp để sử dụng ở mọi vị trí ghế ngồi i-Size của ô tô.\n**Cha mẹ cần lưu ý gì khi chọn thiết bị an toàn cho trẻ?**",
+            "**ISOFIX và i-Size là gì?**\nVới Hệ thống ghế trẻ em nâng cao ECRS, quy chuẩn đề cập đến hệ thống ghế trẻ em tích hợp ISOFIX toàn diện, còn gọi là i-Size, và hệ thống ghế trẻ em tích hợp ISOFIX dành cho xe đặc biệt.\nISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng 2 neo cố định trên xe và 2 cơ cấu khóa tương ứng trên thiết bị an toàn cho trẻ em, kết hợp với cơ cấu chống xoay, chống lật.",
+            "Loại phổ thông có thể lắp ở hầu hết các vị trí ghế ngồi trên xe. Loại hạn chế chỉ lắp ở các vị trí ghế ngồi dành cho loại phương tiện cụ thể do nhà sản xuất ghế hoặc nhà sản xuất xe quy định. Loại dành cho xe đặc biệt được sử dụng trong các trường hợp dành cho xe đặc biệt hoặc xe đã được lắp sẵn hệ thống ghế trẻ em CRS.\n**ISOFIX và i-Size là gì?**",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "# Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n\n**Source:** https://phapluat.gov.vn/tin-tuc/quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7\n\n**Crawled:** 2026-09-20T07:50:31.800451+00:00\n\n---"
+          ],
+          "reference": "ISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng hai neo cố định trên xe và hai cơ cấu khóa tương ứng, kết hợp cơ cấu chống xoay hoặc chống lật.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 1.5970034170313738,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.7380826665242436,
+          "context_recall": 1.0,
+          "context_precision": 0.9999999999666667
+        },
+        {
+          "case": 6,
+          "user_input": "Nghị định 238/2026/NĐ-CP thay đổi hình thức xử phạt nào đối với ô tô chở trẻ em không có thiết bị an toàn phù hợp?",
+          "response": "Nghị định 238/2026/NĐ-CP đã thay đổi hình thức xử phạt đối với ô tô chở trẻ em không có thiết bị an toàn phù hợp bằng cách bổ sung quy định phạt cảnh cáo đối với người điều khiển xe ô tô thực hiện hành vi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét mà không sử dụng thiết bị an toàn phù hợp (trừ xe ô tô kinh doanh vận tải hành khách) (Document 1). Đồng thời, nghị định này cũng bỏ quy định phạt tiền từ 800.000 đồng đến 1.000.000 đồng đối với lái xe ô tô chở trẻ em không sử dụng thiết bị an toàn phù hợp theo quy định (Document 3).",
+          "retrieved_contexts": [
+            "Một trong các nội dung đáng chú ý của Nghị định số 238/2026/NĐ-CP là bổ sung khoản 1a vào trước khoản 1 Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt hành vi chở trẻ em trên xe mà không sử dụng thiết bị an toàn. Theo đó, phạt cảnh cáo đối với người điều khiển xe ô tô thực hiện hành vi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe mà không sử dụng thiết bị an toàn phù hợp cho trẻ em theo quy định (trừ xe ô tô kinh doanh vận tải hành khách).",
+            "**Chính phủ ban hành Nghị định số 238/2026/NĐ-CP ngày 26/6/2026 sửa đổi, bổ sung một số điều của Nghị định số 168/2024/NĐ-CP ngày 26/12/2024 của Chính phủ quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ; trừ điểm, phục hồi điểm giấy phép lái xe.**\n## **Bỏ quy định phạt tiền đối với lái xe ô tô chở trẻ em dưới 10 tuổi không sử dụng thiết bị an toàn phù hợp**",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp\n30/06/2026\n09:01\nĐặt lại–\n100%\n+\n![Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp](https://s3-han02.fptcloud.com/cplqg-vn/22ae41e3-4bd8-48c9-85ea-3aca784e18c0.jpg)",
+            "Đồng thời, tại điểm m khoản 3 Điều 6, Nghị định 238/2026/NĐ-CP bỏ quy định phạt tiền từ 800.000 đồng đến 1.000.000 đồng đối với lái xe ô tô chở trẻ em không sử dụng thiết bị an toàn phù hợp theo quy định.\n## **Ngăn chặn hành vi làm thay đổi khả năng nhận diện biển số xe**"
+          ],
+          "reference": "Nghị định bổ sung hình thức phạt cảnh cáo và bỏ mức phạt tiền 800.000–1.000.000 đồng cho hành vi này, với các điều kiện và ngoại lệ được nêu trong nghị định.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md"
+          ],
+          "latency_seconds": 2.2251939160050824,
+          "faithfulness": 0.8,
+          "answer_relevancy": 0.7837382316825453,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999998
+        },
+        {
+          "case": 7,
+          "user_input": "Nghị định 238/2026/NĐ-CP có hiệu lực từ ngày nào?",
+          "response": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày 01/01/2028 (Document 1).",
+          "retrieved_contexts": [
+            "Nghị định 238/2026/NĐ-CP quy định việc xử phạt vi phạm hành chính liên quan đến thiết bị ghi nhận hình ảnh người lái xe đối với xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô kinh doanh vận tải hàng hóa (trừ xe ô tô đầu kéo), xe vận tải nội bộ có hiệu lực thi hành từ ngày 01/01/2028.",
+            "(6) Ké từ ngày 01/7/2026 khi Luật sửa đổi, bd sung một số điều của 10 Luật có liên\nquan đến an ninh, trật tự có hiệu lực thi hành thì ghi căn cứ vào Ludt này.\n|     |     | ụ c   đ íc h   đ | ầ u  n ố i .  |     |     |\n| --- | --- | ---------------- | ------------- | --- | --- |\n( 7 )  N ê u  r õ  m  phần theo quy định của Nghị định số 165/2024/NĐ-CP, |\nà n h\n| ( 8 | )  H ồ  s ơ  b ao |   g ồ m   c á c |   th |     |     |\n| --- | ----------------- | --------------- | ---- | --- | --- |",
+            "**Chính phủ ban hành Nghị định số 238/2026/NĐ-CP ngày 26/6/2026 sửa đổi, bổ sung một số điều của Nghị định số 168/2024/NĐ-CP ngày 26/12/2024 của Chính phủ quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ; trừ điểm, phục hồi điểm giấy phép lái xe.**\n## **Bỏ quy định phạt tiền đối với lái xe ô tô chở trẻ em dưới 10 tuổi không sử dụng thiết bị an toàn phù hợp**",
+            "Bên cạnh đó, Nghị định số 238/2026/NĐ-CP sửa đổi, bổ sung điểm đ khoản 6 Điều 20 Nghị định số 168/2024/NĐ-CP theo hướng bổ sung hình phạt đối với xe vận tải nội bộ không lắp thiết bị giám sát hành trình theo quy định. Tại Nghị định số 168/2024/NĐ-CP, chỉ áp dụng hình phạt này đối với xe kinh doanh vận tải hành khách.",
+            "Nghị định số 238/2026/NĐ-CP bổ sung điểm n tại khoản 5 Điều 20 Nghị định số 168/2024/NĐ-CP về việc xử phạt đối với lái xe kinh doanh vận tải từ 08 chỗ trở lên không lắp thiết bị ghi nhận hình ảnh khoang chở khách"
+          ],
+          "reference": "Từ ngày 15/8/2026.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md"
+          ],
+          "latency_seconds": 1.630266708030831,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.8000112804494751,
+          "context_recall": 0.0,
+          "context_precision": 0.0
+        },
+        {
+          "case": 8,
+          "user_input": "Mức phạt đối với hành vi làm thay đổi khả năng nhận diện biển số xe được nêu là bao nhiêu?",
+          "response": "Mức phạt đối với hành vi làm thay đổi khả năng nhận diện biển số xe là từ 20.000.000 đồng đến 26.000.000 đồng (Document 1).",
+          "retrieved_contexts": [
+            "Cụ thể, phạt tiền từ 20.000.000 đồng đến 26.000.000 đồng đối với hành vi điều khiển xe không gắn đủ biển số hoặc gắn biển số không đúng vị trí, không đúng quy cách theo quy định; gắn biển số không rõ chữ, số hoặc sơn, dán lên chữ, số của biển số xe; gắn biển số bị bẻ cong, che lấp, làm thay đổi chữ, số, màu sắc (của chữ, số, nền biển số xe), hình dạng, kích thước của biển số xe; sử dụng chất liệu, vật liệu, thiết bị làm thay đổi khả năng nhận diện thông tin biển số xe của phương tiện, thiết bị",
+            "Đồng thời, tại điểm m khoản 3 Điều 6, Nghị định 238/2026/NĐ-CP bỏ quy định phạt tiền từ 800.000 đồng đến 1.000.000 đồng đối với lái xe ô tô chở trẻ em không sử dụng thiết bị an toàn phù hợp theo quy định.\n## **Ngăn chặn hành vi làm thay đổi khả năng nhận diện biển số xe**",
+            "1.  Phạt tiền từ 200.000 đồng đến 400.000 đồng đối với hành vi điều khiển xe\nkhông  có  kính  chăn  gió hoặc  có nhưng vỡ không  có tác  dụng  (đôi  với xe  có thiết\n\nkê  lắp  kính chan gió).\n\n2.  Phạt tiền từ 400.000  đồng  đến  600.000 đồng  đối  với  một  trong  các  hành\n\nvi vị phạm  sau  đây:",
+            "động quá phạm vi, tuyển đường, thời hạn cho phép;\n\nb)  Điêu  khién xe  (kê cả ro moóc và sơ mi  ro moóc)  không  gan  biên  sô  (đối\n\nvới  loại xe  có quy  định phải gan  biến  số).\n\n8.  Phat tiền từ 20.000.000  đồng  đến 26.000.000  đồng  đối với một trong  các\n\nhành vi vi phạm  sau  đây:\n\na) Điều khiển xe gắn biển số không đúng với chứng nhận đăng ký xe hoặc  gắn\n\nbiển số không  do cơ quan có thẩm quyền cấp (kê cả ro moóc và sơ mi ro moóc);",
+            "hành vi vi phạm  sau  đây:\n\na)  Điều  khiển  phương  tiện  không  gắn  biển  số  tạm  thời  hoặc  gắn biển  số\ntạm  thời  không  do  cơ  quan  có  thâm  quyền  cấp  (nếu  có  quy  định  phải  gắn  biển\nsố  tạm  thời);\n\nb) Điều khiển xe ô tô có tay lái bên phải tham gia giao thông mà không đi theo\nđoàn, không có  người,  phương tiện hỗ trợ, hướng dẫn giao thông theo quy định.\n\n5.  Phạt  tiền  từ  10.000.000  đồn 8  đến  12.000.000  đồng  đối  với  hành  vi  hoạt"
+          ],
+          "reference": "Từ 20.000.000 đồng đến 26.000.000 đồng.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "nghi-dinh-168-2024-nd-cp.md",
+            "nghi-dinh-168-2024-nd-cp.md",
+            "nghi-dinh-168-2024-nd-cp.md"
+          ],
+          "latency_seconds": 1.9175677089951932,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5180969450297471,
+          "context_recall": 1.0,
+          "context_precision": 0.7499999999625
+        },
+        {
+          "case": 9,
+          "user_input": "Theo đề xuất thay đổi cách tra cứu phạt nguội, cơ sở đăng kiểm sẽ tra cứu dữ liệu phương tiện vi phạm ở đâu?",
+          "response": "Theo đề xuất thay đổi cách tra cứu phạt nguội, cơ sở đăng kiểm sẽ tra cứu dữ liệu phương tiện vi phạm từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, thay vì phải kiểm tra trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay (Document 1).",
+          "retrieved_contexts": [
+            "Đề xuất thay đổi cách tra cứu 'phạt nguội'\n15/04/2026\n05:48\nĐặt lại–\n100%\n+\n## Dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, thay vì phải kiểm tra dữ liệu phạt nguội đồng thời trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay.\n![](https://s3-han02.fptcloud.com/cplqg-vn/ef1fea0b-bf0a-47e1-86e3-d8631f06b791.jpg?width=777&height=518)",
+            "## Chỉ tra dữ liệu phương tiện vi phạm trên phần mềm Cục Đăng kiểm Việt Nam\nĐiểm nhấn đáng chú ý của dự thảo là quy định rõ: dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, theo quy định tại khoản 1 Điều 43 của Luật TTATGT đường bộ.",
+            "# Đề xuất thay đổi cách tra cứu 'phạt nguội'\n\n**Source:** https://phapluat.gov.vn/tin-tuc/chinh-sach-moi/de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878\n\n**Crawled:** 2026-09-20T07:50:39.795624+00:00\n\n---",
+            "\"3,  Quy định  xử  phạt  vi  phạm  hành  chính  liên  quan  đến  thiết bị  ghi  nhận\nhình  ảnh  người  lái  xe  đối  với  xe  ô  tô  kinh  doanh  vận  tải  hành  khách  dưới  08\nchỗ  (không kê  chỗ  của  người  lái  xe),  xe  ô  tô  kinh  doanh  vận  tải  hàng  hóa (tri:\nxe  ô  tô  đầu  kéo),  xe  vận  tải  nội  bộ  tại  điểm  |  khoản  5  Điều 20,  điểm  b  khoản  3\n\nĐiều  21,  điểm  b  khoản  9a  Điều  32  của  Nghị  định  này  có  hiệu  lực  thi  hành  từ\nngày 0Í tháng 01  năm 2028.",
+            "|\n\nc)  Trong  thời  hạn  hẹn  đến  giải  quyết vụ  việc vi  phạm  ghi  trong  biên  bản  vi\nphạm hành chính,  nếu  người  vi phạm (trừ trường hợp  quy định tại  điểm b  khoản\nnày) xuất trình được các giấy tờ hoặc thông tin của các giây tờ được tích hợp trong\ntài khoản định danh  điện tử theo quỷ định thì người có thâm quyền không ra quyết\nđịnh xử phạt vi phạm hành chính đối với hành vi vi phạm không có giây tờ, không\nmang theo  giấy tờ và không xử phat đối  với chủ phương tiện;\n\n\f103"
+          ],
+          "reference": "Trên phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam.",
+          "expected_source": "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+          "retrieved_sources": [
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "nghi-dinh-238-2026-nd-cp.md",
+            "nghi-dinh-168-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.674969583051279,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.4264193245255727,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999995
+        },
+        {
+          "case": 10,
+          "user_input": "Nếu hệ thống vẫn thể hiện xe chưa hoàn thành khắc phục nhưng chủ xe có bằng chứng đã nộp phạt, cơ sở đăng kiểm có thể làm gì?",
+          "response": "Nếu hệ thống vẫn thể hiện xe chưa hoàn thành khắc phục nhưng chủ xe có bằng chứng đã nộp phạt, cơ sở đăng kiểm sẽ cập nhật các tài liệu này lên hệ thống làm căn cứ và thực hiện kiểm định cho phương tiện (Document 2).",
+          "retrieved_contexts": [
+            "Theo đó, cơ sở đăng kiểm vẫn thực hiện kiểm định theo quy định. Khi sự cố được khắc phục, nếu phát hiện phương tiện thuộc diện bị từ chối kiểm định, cơ sở đăng kiểm sẽ thông báo cho chủ xe, đồng thời thu hồi giấy chứng nhận và tem kiểm định. Nếu không thuộc diện bị từ chối, sẽ phát hành giấy chứng nhận và thông báo cho chủ xe.\n### Buộc tra cứu dữ liệu đăng ký xe khi tiếp nhận đăng kiểm",
+            "Trường hợp phát hiện thông tin xe sản xuất, lắp ráp hoặc nhập khẩu không khớp với thực tế, cơ sở đăng kiểm sẽ dừng lập hồ sơ, thông báo cho chủ xe và phản hồi về Cục Đăng kiểm để phối hợp xử lý. Chỉ tiếp tục khi có xác nhận phù hợp.\nĐối với xe bị tịch thu, đấu giá nhưng không có dữ liệu trong hệ thống, cơ sở đăng kiểm sẽ lập bản xác nhận thông số kỹ thuật, kèm theo tài liệu chứng minh như công bố của nhà sản xuất hoặc kết quả giám định của cơ quan có thẩm quyền.",
+            "Đặc biệt, tại Điều 14 của dự thảo Thông tư về xử lý các trường hợp phát sinh, nêu rõ: nếu hệ thống thông tin phương tiện vi phạm của Cục Đăng kiểm vẫn thể hiện trạng thái \"chưa hoàn thành khắc phục\", nhưng chủ xe cung cấp được bằng chứng đã khắc phục (gồm biên bản, quyết định xử phạt và biên lai nộp phạt), thì cơ sở đăng kiểm sẽ cập nhật các tài liệu này lên hệ thống làm căn cứ và thực hiện kiểm định cho phương tiện.",
+            "Nếu dữ liệu đăng ký xe không phù hợp với dữ liệu của Cục Đăng kiểm, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và yêu cầu chủ xe liên hệ cơ quan đăng ký xe để xử lý.\nTrường hợp chủ xe xuất trình giấy tờ nhưng không tra cứu được dữ liệu hoặc dữ liệu không khớp, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và thông báo cho cơ quan công an để xử lý theo quy định.",
+            "20. Ngoài việc bị áp  dụng hình thức xử phạt,  cá nhân,  t6 chức thực hiện hành\nvi vi phạm  quy định tại  điểm  a,  điểm  d  khoản  7;  điểm  a,  điểm  e  khoản  8;  điểm  đ\nkhoản 9  Điều này bị  thu hồi hồ  so dang ky xe bi tây xóa, sửa chữa hoặc giả mạo;\ngiấy tờ, tài  liệu giả để được cấp lại biển số xe, chứng nhận  đăng  ký xe,  giây chứng\n\nnhận  kiểm  định  an  toàn  kỹ thuật và  bao  vệ  mỗi  trường;  chứng  nhận  đăng  ky  xe\n\n|\n\n\f75"
+          ],
+          "reference": "Cơ sở đăng kiểm có thể cập nhật biên bản, quyết định xử phạt và biên lai nộp phạt lên hệ thống làm căn cứ và thực hiện kiểm định.",
+          "expected_source": "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+          "retrieved_sources": [
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "nghi-dinh-168-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.1144113749614917,
+          "faithfulness": 0.8,
+          "answer_relevancy": 0.5032745316121662,
+          "context_recall": 1.0,
+          "context_precision": 0.9999999999666667
+        },
+        {
+          "case": 11,
+          "user_input": "Nghị định 241/2026/NĐ-CP phân cấp quản lý những quốc lộ nào cho UBND cấp tỉnh?",
+          "response": "Nghị định 241/2026/NĐ-CP phân cấp quản lý các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ cho Ủy ban nhân dân cấp tỉnh, bao gồm quốc lộ trên địa bàn tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ (Document 1, Document 2).",
+          "retrieved_contexts": [
+            "## Sửa đổi quy định về phân cấp quản lý quốc lộ\nTrong đó, Nghị định số 241/2026/NĐ-CP sửa đổi, bổ sung Điều 4 về phân cấp quản lý quốc lộ như sau:\n\"Điều 4. Phân cấp để Ủy ban nhân dân cấp tỉnh quản lý quốc lộ\n1. Các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ được phân cấp để Ủy ban nhân dân cấp tỉnh quản lý, bao gồm:\na) Quốc lộ trên địa bàn tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ quy định tại khoản 2 Điều này và Điều 6 Nghị định này;",
+            "Đồng thời, Nghị định số 241/2026/NĐ-CP sửa đổi, bổ sung Điều 7 quy định về điều chỉnh loại đường theo cấp quản lý như sau:\n''Điều 7. Điều chỉnh loại đưòng theo cấp quản lý\n1. Bộ Xây dựng quyết định điều chỉnh quốc lộ thành đường địa phương; đường địa phương và đường khác thành quốc lộ đối với các trường hợp sau:",
+            "2. Quốc lộ trong quy hoạch mạng lưới đường bộ không phân cấp gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân cấp quản lý:",
+            "**Chính phủ ban hành Nghị định số 236/2026/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định số 151/2024/NĐ-CP ngày 15/11/2024 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Trật tự, an toàn giao thông đường bộ được sửa đổi, bổ sung bởi Nghị định số 184/2025/NĐ-CP ngày 01/7/2025 của Chính phủ.**\n## Hoàn thiện cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ",
+            "theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân\ncấp quản lý:\na) Thực hiện quản lý, đầu tư, xây dựng theo quy hoạch được duyệt; quyền,\ntrách nhiệm của cơ quan chủ quản đối với dựá n đầu tưx ây dựng quốc lộ được\nphân cấp quản lý trên địa bàn, trừ trường hợp dự án đầu tư giao Ủy ban nhân\ndân tỉnh, thành phố trực thuộc trung ương hoặc cơ quan khác là cơ quan chủ\nquản theo quy định của pháp luật có liên quan; thực hiện quyền, trách nhiệm"
+          ],
+          "reference": "Các tuyến quốc lộ thuộc quy hoạch mạng lưới đường bộ trên địa bàn tỉnh, thành phố, trừ các quốc lộ không phân cấp như Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ cao tốc và các trường hợp đặc biệt.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "nghi-dinh-241-2026-nd-cp.md"
+          ],
+          "latency_seconds": 2.0679828749853186,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.6140851076940583,
+          "context_recall": 1.0,
+          "context_precision": 0.9999999999666667
+        },
+        {
+          "case": 12,
+          "user_input": "Những quốc lộ nào được nêu là không phân cấp cho UBND cấp tỉnh?",
+          "response": "Các quốc lộ không phân cấp cho Ủy ban nhân dân cấp tỉnh gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ (Document 1).",
+          "retrieved_contexts": [
+            "2. Quốc lộ trong quy hoạch mạng lưới đường bộ không phân cấp gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân cấp quản lý:",
+            "Điều 1. Sửa đỗi, bé sung Điều 4\n\"Điều 4. Phân cấp dé Ủy ban nhân dân cấp tinh quản lý quốc lộ\n1. Các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ được\nphân cấp dé Ủy ban nhân dân cấp tinh quan lý, bao gồm:\na) Quốc lộ trên địa ban tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ\nquy định tại khoản 2 Điều này và Điều 6 Nghị định này;\nb) Các công trình, hạng mục thuộc kết cấu ha tầng đường bộ gắn với quốc\nlộ phân cấp quy định tại điểm a và điểm c khoản này;",
+            "7. Quốc lộ phân cấp cho Ủy ban nhân dân cấp tỉnh quản lý phải thực hiện điều chuyển tài sản kết cấu hạ tầng đường bộ theo quy định của pháp luật về quản lý, sử dụng tài sản công.\nĐối với trường hợp quy định tại khoản 6 Điều này, việc điều chuyển tài sản kết cấu hạ tầng đường bộ từ Ủy ban nhân dân cấp tỉnh về Bộ Xây dựng để quản lý được thực hiện sau khi Bộ Xây dựng có quyết định tiếp nhận lại quốc lộ đã phân cấp.",
+            "thành phố trực thuộc trung ương khác để các địa phương này quản lý; thống nhất với Ủy ban nhân dân cấp tỉnh có liên quan để giao một Ủy ban nhân dân cấp tỉnh quản lý công trình cầu, hầm, bến phà nằm trên địa bàn 02 đơn vị hành chính cấp tỉnh trở lên.",
+            "Uy ban nhân dân cấp tỉnh có trách nhiệm bé trí vốn và các nguồn lực bảo\nđảm thực hiện các quy định tại điểm a, điểm b và điểm c khoản 3 Điều này.\n6. Trường hợp không bảo đảm nguồn lực đầu tu, xây dựng, quản lý, vận\nhành, khai thác, bảo trì quốc lộ được phân cấp quản lý hoặc trường hợp cần\nthiết khác, Ủy ban nhân dân cấp tỉnh có văn bản đề nghị Bộ Xây dựng tiếp\nnhận lại quốc lộ đã phân cấp.\n7. Quốc lộ phân cấp cho Ủy ban nhân dân cấp tỉnh quản lý phải thực hiện"
+          ],
+          "reference": "Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về quốc phòng an ninh và các trường hợp khác theo quyết định của Thủ tướng.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md"
+          ],
+          "latency_seconds": 2.256773874978535,
+          "faithfulness": 0.16666666666666666,
+          "answer_relevancy": 0.428463885725443,
+          "context_recall": 1.0,
+          "context_precision": 0.9999999999
+        },
+        {
+          "case": 13,
+          "user_input": "Cơ quan có thẩm quyền phải kiểm tra thành phần hồ sơ điều chỉnh loại đường trong bao lâu?",
+          "response": "Cơ quan có thẩm quyền phải kiểm tra thành phần hồ sơ điều chỉnh loại đường trong thời hạn 07 ngày làm việc kể từ khi nhận đủ hồ sơ theo quy định (Document 1).",
+          "retrieved_contexts": [
+            "b) Trong thời hạn 07 ngày làm việc kể từ khi nhận đủ hồ sơ theo quy định, cơ quan có thẩm quyền giải quyết thủ tục hành chính tiến hành thẩm định hồ sơ, nếu đủ điều kiện thì ban hành Quyết định điều chỉnh loại đường theo cấp quản lý theo quy định tại Mẫu số 04 Phụ lục I kèm theo Nghị định này;\nc) Trả kết quả giải quyết thủ tục hành chính cho cơ quan, tổ chức bằng bản điện tử hợp lệ.",
+            "co quan có thâm quyền giải quyết thủ tục hành chính tiến hành thẩm định hồ\nsơ,n êu đủ điều kiện thì ban hành Quyết định điều chỉnh loại đường theo cấp\nquản lý theo quy định tại Mẫu số 04 Phụ lục I kèm theo Nghị định này;\nc) Trả kết quả giải quyết thủ tục hành chính cho cơ quan, tổ chức bằng bản\nđiện tử hợp lệ.\n5. Việc điều chuyển tài sản kết cấu hạ tầng đường bộ sau khi có quyết định\nđiều chỉnh loại đường của cơ quan, người có thẩm quyền theo quy định của",
+            "(6) Tén cơ quan có thầm quyền quyết định điều chỉnh loại đường.  |\n(7) Kê từ ngày 01/7/2026 khi Luật sửa đổi, bỗ sung một số điều của 10 Luật có liên quan\nđến an ninh, trật tự có hiệu lực thi hành thì ghi căn cứ Luật nay.\n(8) Ghi các căn cứ làm cơ sở việc điều chỉnh loại đường (Ví dụ căn cứ quy hoạchm  ang\nlưới đường bộ, căn cứ quy hoạch khác, căn cứ việc đầu tư xây dựng tuyến tránh thay thé đọnh\n| tuyến chính hiện nay...).  |     | |   |\n| -------------------------- | --- | --- |",
+            "3. Cục Đường bộ Việt Nam có trách nhiệm rà soát, lập 01 bộ hồ sơ đề nghị điều chỉnh loại đường liên quan đến quốc lộ và gửi đến cấp có thẩm quyền quy định tại khoản 1 Điều này để quyết định điều chỉnh loại đường theo cấp quản lý; Sở Xây dựng có trách nhiệm rà soát, lập 01 bộ hồ sơ đề nghị điều chỉnh giữa các loại đường địa phương và gửi đến cấp có thẩm quyền quy định tại khoản 2 Điều này để quyết định điều chỉnh loại đường theo cấp quản lý.\nThành phần hồ sơ bao gồm:",
+            "- Khi kết thúc thi công phải bàn giao lại mặt bằng, hiện trường cho đơn vị\nquản lý đường bộ; đổi với trường hợp gia cường công trình đường bộ, phải tổ\nchức nghiệm thu trước khi đưa công trình vào khai thác;\n- (4) cam kết tự di chuyển hoặc cải tạo công trình nêu trên và không đòi bồi\nthường khi cơ quan quản lý đường bộ, người quản lý, sử dụng đường bộ yêu cầu\ndi chuyên hoặc cải tạo. |\n4. Thời hạn thi công:\nGiấy phép thi công này có thời hạn từ ngày ../..../20...đến ngay...../..../20...."
+          ],
+          "reference": "Trong vòng 2 ngày làm việc kể từ ngày nhận hồ sơ.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md"
+          ],
+          "latency_seconds": 1.7042776250164025,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5493303922419939,
+          "context_recall": 0.0,
+          "context_precision": 0.49999999995
+        },
+        {
+          "case": 14,
+          "user_input": "Nghị định 236/2026/NĐ-CP có quy định gì về thiết bị phát tín hiệu của xe ưu tiên?",
+          "response": "Nghị định 236/2026/NĐ-CP quy định về hệ thống đèn, còi và tín hiệu ưu tiên sử dụng trên các phương tiện xe ưu tiên và xe làm nhiệm vụ khẩn cấp. Nghị định này cũng thống nhất các quy định liên quan đến việc cấp, thu hồi giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên, bao gồm các mẫu giấy phép và quy định về thời hạn sử dụng của giấy phép này (không quá 05 năm kể từ ngày cấp) (Document 2, Document 4). Thiết bị phát tín hiệu chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ (Document 5).",
+          "retrieved_contexts": [
+            "N\nÑ\nSTRP h Nghị định số 236/2026/ND-CP\nxót3 Onan 6 năm 2026 của Chính phủ)\nMẫu số 02a Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\nVăn bản để nghị cấp mới/cấp lại giấy phép sử dụng thiết bị phát\nMẫu số 02b\ntin hiệu của xe ưu tiên\nSố thống kê, theo đối công tác cấp, thu hồi giấy phép sử dụng\nMẫu số 02c\nthiệt bị phát tín hiệu của xe ưu tiên\nBáo cáo việc quan lý, sử dung thiết bị phát tín hiệu của xe ưu\nMẫu số 02d\n,\ntiên",
+            "Thiết bị phát tín hiệu của xe ưu tiên chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ.\nNghị định có hiệu lực thi hành từ 1/7/2026.\nTheo Chinhphu.vn",
+            "Ngoài ra, Nghị định 236/2026/NĐ-CP tiếp tục sửa đổi, bổ sung các quy định liên quan đến xe ưu tiên và xe làm nhiệm vụ khẩn cấp nhằm phù hợp với yêu cầu thực tiễn. Trong đó, Nghị định thống nhất quy định về hệ thống đèn, còi và tín hiệu ưu tiên sử dụng trên các phương tiện này.",
+            "tín hiệu của xe ưu tiên.\nĐiều 22. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\n1. Hình thức, nội dung giấy phép sử dụng thiết bị phát tín hiệu của xe ưu\ntiên theo Mẫu số 02a Phụ lục H kèm theo Nghị định này.\n2. Thời hạn của giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên:\na) Không quá 05 năm kế từ ngày cấp và không được quá ngày hết niên hạn\nsử dụng của phương tiện;\nb) Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp. cho xe ổi",
+            "theo quy định của Bộ trưởng Bộ Y tê.\n3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên bị hư\nhỏng, bị mất hoặc hết thời hạn sử dụng, cơ quan, tổ chức sử dụng xe ưu tiên có\nvăn bản đề nghị cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\ntheo Mẫu số 02b Phụ lục H kèm theo Nghị định này."
+          ],
+          "reference": "Chỉ được lắp trên các loại xe được quy định, phải có giấy phép sử dụng do cơ quan có thẩm quyền cấp và chỉ được sử dụng khi thực hiện nhiệm vụ.",
+          "expected_source": "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+          "retrieved_sources": [
+            "nghi-dinh-236-2026-nd-cp.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.2703311659861356,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5647551343106221,
+          "context_recall": 1.0,
+          "context_precision": 0.6791666666496875
+        },
+        {
+          "case": 15,
+          "user_input": "Luật Trật tự, an toàn giao thông đường bộ định nghĩa thiết bị an toàn cho trẻ em là gì?",
+          "response": "Từ context cung cấp, không có định nghĩa cụ thể nào về \"thiết bị an toàn cho trẻ em\" trong Luật Trật tự, an toàn giao thông đường bộ. Tuy nhiên, có thông tin rằng quy định mới yêu cầu sử dụng thiết bị an toàn phù hợp cho trẻ em, nhưng không nêu rõ định nghĩa cụ thể về thiết bị này. Do đó, tôi không thể xác minh định nghĩa của thiết bị an toàn cho trẻ em.",
+          "retrieved_contexts": [
+            "Theo Luật Trật tự, an toàn giao thông đường bộ, từ ngày 1/7/2026, khi chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m trên ô tô, người lái xe không được bố trí trẻ ngồi cùng hàng ghế với người điều khiển, trừ trường hợp xe chỉ có một hàng ghế.\nCùng với đó, người điều khiển phương tiện có trách nhiệm sử dụng hoặc hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em.",
+            "Quy định mới không chỉ nhằm tránh vi phạm hành chính, mà quan trọng hơn là giảm nguy cơ chấn thương cho trẻ em khi xe phanh gấp, va chạm hoặc xảy ra tai nạn. Trẻ nhỏ có thể hình, chiều cao và hệ xương chưa phát triển như người lớn, nên dây an toàn nguyên bản trên ô tô không phải lúc nào cũng bảo vệ đúng vị trí cơ thể trẻ.\n**Thiết bị an toàn không chỉ là “ghế trẻ em”**",
+            "# Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n\n**Source:** https://phapluat.gov.vn/tin-tuc/quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7\n\n**Crawled:** 2026-09-20T07:50:31.800451+00:00\n\n---",
+            "Điều 2. Giải thích từ ngữ\n\n1. Trật tự, an toàn giao thông đường bộ là trạng thái giao thông trên đường bộ\ncó trật tự, bảo đảm an toàn, thông suốt; được hình thành và điều chỉnh bởi các quy\ntắc, nguyên tắc, quy phạm pháp luật trong lĩnh vực giao thông đường bộ.",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**"
+          ],
+          "reference": "Là thiết bị có khả năng bảo đảm an toàn cho trẻ ở tư thế ngồi hoặc nằm trên ô tô, được thiết kế để giảm nguy cơ chấn thương khi va chạm hoặc xe giảm tốc đột ngột bằng cách hạn chế sự di chuyển của cơ thể trẻ.",
+          "expected_source": "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 1.9279634999693371,
+          "faithfulness": 0.75,
+          "answer_relevancy": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.8666666666377778
+        },
+        {
+          "case": 16,
+          "user_input": "Theo Nghị định 151/2024/NĐ-CP, cơ sở dữ liệu giao thông có thể bao gồm những thông tin nào?",
+          "response": "Theo Nghị định 151/2024/NĐ-CP, cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ có thể bao gồm thông tin từ cơ sở dữ liệu về đào tạo, sát hạch cấp giấy phép lái xe, chứng chỉ bồi dưỡng kiến thức pháp luật về trật tự, an toàn giao thông đường bộ do Bộ Giao thông vận tải xây dựng và quản lý (Document 3).",
+          "retrieved_contexts": [
+            "Trong đó, Nghị định số 236/2026/NĐ-CP sửa đổi, bổ sung quy định cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ (khoản 1 Điều 9, một số điểm, khoản của Điều 10 của Nghị định số 151/2024/NĐ_CP) nhằm hoàn thiện hệ thống cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ theo hướng đồng bộ, thống nhất trên phạm vi toàn quốc.",
+            "**Chính phủ ban hành Nghị định số 236/2026/NĐ-CP sửa đổi, bổ sung một số điều của Nghị định số 151/2024/NĐ-CP ngày 15/11/2024 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Trật tự, an toàn giao thông đường bộ được sửa đổi, bổ sung bởi Nghị định số 184/2025/NĐ-CP ngày 01/7/2025 của Chính phủ.**\n## Hoàn thiện cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ",
+            "3. Chính phủ quy định chi tiết khoản 1 và khoản 2 Điều này; quy định việc thu\nthập, quản lý, khai thác thông tin trong Cơ sở dữ liệu về trật tự, an toàn giao thông\nđường bộ.\n\nĐiều 8. Hợp tác quốc tế về trật tự, an toàn giao thông đường bộ\n\n1. Thực hiện hợp tác quốc tế về trật tự, an toàn giao thông đường bộ trên cơ sở\ntuân thủ pháp luật Việt Nam và điều ước quốc tế có liên quan mà nước Cộng hòa\n\n\f82\n\nCÔNG BÁO/Số 977 + 978/Ngày 24-8-2024",
+            "Theo đó, cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ được xây dựng thống nhất trên toàn quốc, do lực lượng Cảnh sát giao thông quản lý, vận hành, khai thác, dùng chung cho các cơ quan, tổ chức, cá nhân có thẩm quyền, trừ cơ sở dữ liệu liên quan đến lĩnh vực quốc phòng, an ninh.",
+            "3277\nđ) Cơ sở đữ liệu khác có liên quan đến trật tự, an toàn giao thông\nđường bộ.\nvn an. ra\n. €\n2. Thông tin quy định tại khoản 6 Điều 11 của Nghị định nay được thu thập từ:\na) Cơ sở dữ liệu về đảo tạo, sát hạch cấp giấy phép lái xe, chứng chỉ bồi\ndưỡng kiến thức pháp luật về trật tự, an toàn giao thông đường bộ do Bộ Giao\nthông vận tải xây dựng, quản lý;\nb) Cơ sở đữ liệu về đào tạo, sát hạch cấp giấy phép lái xe, chứng chỉ bồi"
+          ],
+          "reference": "Có thể bao gồm thông tin đào tạo, sát hạch và cấp giấy phép lái xe; thông tin tai nạn, xử phạt vi phạm hành chính; cùng các thông tin quản lý phương tiện và người lái theo quy định.",
+          "expected_source": "nghi-dinh-151-2024-nd-cp.md",
+          "retrieved_sources": [
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "nghi-dinh-151-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.0247089589829557,
+          "faithfulness": 0.5,
+          "answer_relevancy": 0.6802674694753394,
+          "context_recall": 0.3333333333333333,
+          "context_precision": 0.4777777777618519
+        }
+      ]
+    },
+    "hybrid_rrf": {
+      "summary": {
+        "faithfulness": 0.9389880952380952,
+        "answer_relevancy": 0.5574047810420717,
+        "context_recall": 0.9479166666666666,
+        "context_precision": 0.8367187499697157,
+        "average": 0.8202570732291373,
+        "average_latency_seconds": 1.7744244140667433,
+        "source_hit_at_5": 1.0
+      },
+      "samples": [
+        {
+          "case": 1,
+          "user_input": "Từ ngày nào ô tô cá nhân chở trẻ dưới 10 tuổi và cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp?",
+          "response": "Từ ngày 1/7/2026, ô tô cá nhân chở trẻ dưới 10 tuổi và cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp (Document 1).",
+          "retrieved_contexts": [
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "Theo Luật Trật tự, an toàn giao thông đường bộ, từ ngày 1/7/2026, khi chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m trên ô tô, người lái xe không được bố trí trẻ ngồi cùng hàng ghế với người điều khiển, trừ trường hợp xe chỉ có một hàng ghế.\nCùng với đó, người điều khiển phương tiện có trách nhiệm sử dụng hoặc hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em.",
+            "3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô không\nđược cho trẻ em ngồi cùng hàng ghế với người lái xe, trừ loại xe ô tô chỉ có một\nhàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp\ncho trẻ em.\n\nĐiều 11. Chấp hành báo hiệu đường bộ",
+            "\"La.  Phat  cảnh  cáo  đối  với  người  điều  khiển  xe  ô  tô  thực  hiện  hành  vi  chở\ntrẻ  em  đưới  10  tudi  và  chiêu  cao  đưới  1,35  mét trên  xe  mà  không  sử  dụng  thiết\n\nbị  an  toàn  phù hợp  cho trẻ  em  theo quy định (trừ xe ô  tô  kinh doanh vận tải  hành\n\nkhách).\".\n\n2,  Sửa  đôi,  bỗ  sung  điểm  m  khoản  3  như sau:\n\n\"m)  Chở trẻ  em  dưới  10  tuổi  và  chiều  cao  dưới  1,35  mét  trên  xe ô  tô  ngồi"
+          ],
+          "reference": "Từ ngày 1/7/2026.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "nghi-dinh-238-2026-nd-cp.md"
+          ],
+          "latency_seconds": 1.9725412499974482,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.6282083100309785,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999998
+        },
+        {
+          "case": 2,
+          "user_input": "Quy định thiết bị an toàn cho trẻ em trên ô tô cá nhân có áp dụng bắt buộc cho taxi và xe khách không?",
+          "response": "Quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân và không áp dụng cho các phương tiện kinh doanh vận tải hành khách như taxi và xe khách (Document 1).",
+          "retrieved_contexts": [
+            "Đáng chú ý, quy định bắt buộc sử dụng thiết bị an toàn cho trẻ em chỉ áp dụng đối với ô tô cá nhân. Các phương tiện kinh doanh vận tải hành khách như taxi, xe công nghệ, xe khách không bắt buộc phải lắp đặt thiết bị này khi chở trẻ em.\n**Không sử dụng thiết bị an toàn có thể bị phạt đến 1 triệu đồng**",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "# Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n\n**Source:** https://phapluat.gov.vn/tin-tuc/quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7\n\n**Crawled:** 2026-09-20T07:50:31.800451+00:00\n\n---",
+            "Một trong các nội dung đáng chú ý của Nghị định số 238/2026/NĐ-CP là bổ sung khoản 1a vào trước khoản 1 Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt hành vi chở trẻ em trên xe mà không sử dụng thiết bị an toàn. Theo đó, phạt cảnh cáo đối với người điều khiển xe ô tô thực hiện hành vi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe mà không sử dụng thiết bị an toàn phù hợp cho trẻ em theo quy định (trừ xe ô tô kinh doanh vận tải hành khách).",
+            "Từ ngày 1/7/2026, việc trang bị thiết bị an toàn cho trẻ em trên ô tô cá nhân sẽ không còn là khuyến nghị, mà trở thành yêu cầu bắt buộc. Do đó, phụ huynh nên chủ động tìm hiểu, lựa chọn sản phẩm đạt chuẩn và phù hợp với trẻ, thay vì chờ đến sát thời điểm quy định có hiệu lực mới mua và lắp đặt vội vàng.\nTheo Báo Pháp luật Việt Nam"
+          ],
+          "reference": "Không. Quy định bắt buộc trong bài viết áp dụng cho ô tô cá nhân; taxi, xe công nghệ và xe khách không bắt buộc lắp thiết bị này khi chở trẻ em.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 1.4508126670261845,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5917995846727792,
+          "context_recall": 0.5,
+          "context_precision": 0.8874999999778125
+        },
+        {
+          "case": 3,
+          "user_input": "Mức phạt được nêu cho việc ô tô chở trẻ dưới 10 tuổi, cao dưới 1,35 m không sử dụng thiết bị an toàn phù hợp là bao nhiêu?",
+          "response": "Mức phạt cho việc ô tô chở trẻ dưới 10 tuổi, cao dưới 1,35 m không sử dụng thiết bị an toàn phù hợp là từ 800.000 đồng đến 1 triệu đồng (citation: [Document 5]).",
+          "retrieved_contexts": [
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng.",
+            "\"La.  Phat  cảnh  cáo  đối  với  người  điều  khiển  xe  ô  tô  thực  hiện  hành  vi  chở\ntrẻ  em  đưới  10  tudi  và  chiêu  cao  đưới  1,35  mét trên  xe  mà  không  sử  dụng  thiết\n\nbị  an  toàn  phù hợp  cho trẻ  em  theo quy định (trừ xe ô  tô  kinh doanh vận tải  hành\n\nkhách).\".\n\n2,  Sửa  đôi,  bỗ  sung  điểm  m  khoản  3  như sau:\n\n\"m)  Chở trẻ  em  dưới  10  tuổi  và  chiều  cao  dưới  1,35  mét  trên  xe ô  tô  ngồi",
+            "3. Khi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe ô tô không\nđược cho trẻ em ngồi cùng hàng ghế với người lái xe, trừ loại xe ô tô chỉ có một\nhàng ghế; người lái xe phải sử dụng, hướng dẫn sử dụng thiết bị an toàn phù hợp\ncho trẻ em.\n\nĐiều 11. Chấp hành báo hiệu đường bộ",
+            "Theo Luật Trật tự, an toàn giao thông đường bộ, từ ngày 1/7/2026, khi chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m trên ô tô, người lái xe không được bố trí trẻ ngồi cùng hàng ghế với người điều khiển, trừ trường hợp xe chỉ có một hàng ghế.\nCùng với đó, người điều khiển phương tiện có trách nhiệm sử dụng hoặc hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em."
+          ],
+          "reference": "Từ 800.000 đồng đến 1.000.000 đồng theo nội dung bài viết về Nghị định 168/2024/NĐ-CP.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "nghi-dinh-238-2026-nd-cp.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 1.3872977920109406,
+          "faithfulness": 0.5,
+          "answer_relevancy": 0.6677577324485201,
+          "context_recall": 1.0,
+          "context_precision": 0.999999999975
+        },
+        {
+          "case": 4,
+          "user_input": "CRS được chia thành những nhóm cân nặng nào?",
+          "response": "CRS được chia thành 5 nhóm theo cân nặng của trẻ như sau: \n\n1. Nhóm 0 dành cho trẻ có cân nặng dưới 10 kg.\n2. Nhóm 0+ dành cho trẻ có cân nặng dưới 13 kg.\n3. Nhóm I dành cho trẻ có cân nặng từ 9 kg đến 18 kg.\n4. Nhóm II dành cho trẻ có cân nặng từ 15 kg đến 25 kg.\n5. Nhóm III dành cho trẻ có cân nặng từ 22 kg đến 36 kg (Document 1).",
+          "retrieved_contexts": [
+            "Nhóm 0 dành cho trẻ có cân nặng dưới 10 kg.\nNhóm 0+ dành cho trẻ có cân nặng dưới 13 kg.\nNhóm I dành cho trẻ có cân nặng từ 9 kg đến 18 kg.\nNhóm II dành cho trẻ có cân nặng từ 15 kg đến 25 kg.\nNhóm III dành cho trẻ có cân nặng từ 22 kg đến 36 kg.\nNgoài cách phân nhóm theo cân nặng, CRS còn được phân thành các loại theo phạm vi sử dụng, gồm loại phổ thông, loại hạn chế, loại bán phổ thông và loại dành cho xe đặc biệt.",
+            "Thiết bị an toàn bao gồm Hệ thống ghế trẻ em CRS, tức Child Restraint System, và Hệ thống ghế trẻ em nâng cao ECRS, tức Enhanced Child Restraint System.\nTrong đó, Hệ thống ghế trẻ em CRS là tổ hợp gồm ghế, dây đai, khóa an toàn, thiết bị điều chỉnh cùng các phụ kiện như nôi hoặc tấm chắn va chạm, được thiết kế để lắp đặt chắc chắn lên ô tô.\nHệ thống ghế trẻ em CRS được chia thành 5 nhóm theo cân nặng của trẻ:\nNhóm 0 dành cho trẻ có cân nặng dưới 10 kg.",
+            "2  làm nhivệụ mkhẩn  cấp  Đỏ  16+  60,5  = 10,8  \" 60.  240  i.\n|     | Xe của lực lượng cônagn   |     |     |     |     | .   | .   |     |     |     |     | ‘a  tho dan  |     | Z2 Bộ  |\n| --- | ------------------------- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ------------ | --- | ------ |\n3  |lamnhiệmvụkháncáp\n|     |     |     |     | | Xanh-Đẻ|  |     |     | 16+  60,5  |     | 2108  |     |     | G07 240  |     | hey  |",
+            "nghiệp đưa nội dung chấp hành pháp luật về trật tự, an toàn giao thông đường bộ\nlà một trong những tiêu chí đánh giá, xếp loại hạnh kiểm đối với học sinh.\nChương I\nCƠ SỞ DU LIEU VE TRAT TỰ, AN TOÀN GIAO THONG\nDUONG BQ; THU THẬP, QUAN LÝ, KHAI THAC, KET NÓI,\nCHIA SE THONG TIN TRONG CO SO DU LIEU VE\nTRAT TY, AN TOAN GIAO THONG DUONG BO\nDiéu 9. Nguyên tác xây dựng, quản lý, khai thác, sử dụng, kết nối,\nchia sẻ Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ",
+            "55\n\n2.  Phat  tién  tir  2.000.000  déng  dén  3.000.000  déng  đối  với  hành  vi  vận\nchuyên  hàng  hoá  nguy  hiểm  mà  không  mang theo  hồ  sơ  vận  chuyển  hàng  hóa\nnguy  hiểm  do  người  thuê  vận tải  cung  cấp  theo  quy  định,  giấy  chứng  nhận  hoàn\nthành chương trình tập huấn an toàn hàng hóa nguy hiểm phù hợp với  loại, nhóm\nhàng hóa nguy hiểm đang vận chuyển (nếu có)."
+          ],
+          "reference": "Nhóm 0 dưới 10 kg; nhóm 0+ dưới 13 kg; nhóm I từ 9 đến 18 kg; nhóm II từ 15 đến 25 kg; nhóm III từ 22 đến 36 kg.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-168-2024-nd-cp.md"
+          ],
+          "latency_seconds": 2.129848624987062,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5634890830594377,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999995
+        },
+        {
+          "case": 5,
+          "user_input": "ISOFIX là gì theo bài viết về thiết bị an toàn cho trẻ em?",
+          "response": "ISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng 2 neo cố định trên xe và 2 cơ cấu khóa tương ứng trên thiết bị an toàn cho trẻ em, kết hợp với cơ cấu chống xoay, chống lật (Document 5).",
+          "retrieved_contexts": [
+            "ISOFIX toàn diện là hệ thống ISOFIX có thêm dây buộc trên cùng hoặc chân đỡ để chống xoay hệ thống ghế trẻ em. Trong đó, ghế trẻ em tích hợp ISOFIX toàn diện, i-Size, là hệ thống phù hợp để sử dụng ở mọi vị trí ghế ngồi i-Size của ô tô.\n**Cha mẹ cần lưu ý gì khi chọn thiết bị an toàn cho trẻ?**",
+            "**ISOFIX và i-Size là gì?**\nVới Hệ thống ghế trẻ em nâng cao ECRS, quy chuẩn đề cập đến hệ thống ghế trẻ em tích hợp ISOFIX toàn diện, còn gọi là i-Size, và hệ thống ghế trẻ em tích hợp ISOFIX dành cho xe đặc biệt.\nISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng 2 neo cố định trên xe và 2 cơ cấu khóa tương ứng trên thiết bị an toàn cho trẻ em, kết hợp với cơ cấu chống xoay, chống lật.",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "**Thiết bị an toàn không chỉ là “ghế trẻ em”**\nNhiều người vẫn thường gọi chung là “ghế trẻ em”, tuy nhiên theo Quy chuẩn kỹ thuật quốc gia QCVN 123:2024/BGTVT, thiết bị an toàn cho trẻ em có phạm vi rộng hơn.\nTheo quy chuẩn này, thiết bị an toàn cho trẻ em là thiết bị có khả năng bảo đảm an toàn cho trẻ ở tư thế ngồi hoặc nằm trên ô tô, được thiết kế nhằm giảm nguy cơ chấn thương khi xảy ra va chạm hoặc khi xe giảm tốc đột ngột bằng cách hạn chế sự di chuyển của cơ thể trẻ.",
+            "13. Thiết bị an toàn cho trẻ em là thiết bị có đủ khả năng bảo đảm an toàn cho\ntrẻ em ở tư thế ngồi hoặc nằm trên xe ô tô, được thiết kế để giảm nguy cơ chấn\nthương cho người dùng trong trường hợp xảy ra va chạm hoặc xe ô tô giảm tốc độ\nđột ngột, bằng cách hạn chế sự di chuyển của cơ thể trẻ em."
+          ],
+          "reference": "ISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng hai neo cố định trên xe và hai cơ cấu khóa tương ứng, kết hợp cơ cấu chống xoay hoặc chống lật.",
+          "expected_source": "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md"
+          ],
+          "latency_seconds": 1.5859807499800809,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.7380826665242436,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999995
+        },
+        {
+          "case": 6,
+          "user_input": "Nghị định 238/2026/NĐ-CP thay đổi hình thức xử phạt nào đối với ô tô chở trẻ em không có thiết bị an toàn phù hợp?",
+          "response": "Nghị định 238/2026/NĐ-CP đã bỏ quy định phạt tiền đối với lái xe ô tô chở trẻ em dưới 10 tuổi không sử dụng thiết bị an toàn phù hợp, và thay vào đó là phạt cảnh cáo đối với hành vi này (Document 2, Document 5).",
+          "retrieved_contexts": [
+            "Một trong các nội dung đáng chú ý của Nghị định số 238/2026/NĐ-CP là bổ sung khoản 1a vào trước khoản 1 Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt hành vi chở trẻ em trên xe mà không sử dụng thiết bị an toàn. Theo đó, phạt cảnh cáo đối với người điều khiển xe ô tô thực hiện hành vi chở trẻ em dưới 10 tuổi và chiều cao dưới 1,35 mét trên xe mà không sử dụng thiết bị an toàn phù hợp cho trẻ em theo quy định (trừ xe ô tô kinh doanh vận tải hành khách).",
+            "Đồng thời, tại điểm m khoản 3 Điều 6, Nghị định 238/2026/NĐ-CP bỏ quy định phạt tiền từ 800.000 đồng đến 1.000.000 đồng đối với lái xe ô tô chở trẻ em không sử dụng thiết bị an toàn phù hợp theo quy định.\n## **Ngăn chặn hành vi làm thay đổi khả năng nhận diện biển số xe**",
+            "**Chính phủ ban hành Nghị định số 238/2026/NĐ-CP ngày 26/6/2026 sửa đổi, bổ sung một số điều của Nghị định số 168/2024/NĐ-CP ngày 26/12/2024 của Chính phủ quy định xử phạt vi phạm hành chính về trật tự, an toàn giao thông trong lĩnh vực giao thông đường bộ; trừ điểm, phục hồi điểm giấy phép lái xe.**\n## **Bỏ quy định phạt tiền đối với lái xe ô tô chở trẻ em dưới 10 tuổi không sử dụng thiết bị an toàn phù hợp**",
+            "Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp\n30/06/2026\n09:01\nĐặt lại–\n100%\n+\n![Từ 15/8, phạt cảnh cáo ô tô chở trẻ em không có thiết bị an toàn phù hợp](https://s3-han02.fptcloud.com/cplqg-vn/22ae41e3-4bd8-48c9-85ea-3aca784e18c0.jpg)",
+            "Theo Điều 6 Nghị định số 168/2024/NĐ-CP về xử phạt vi phạm hành chính trong lĩnh vực giao thông đường bộ, từ ngày 1/7/2026, người điều khiển ô tô chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m ngồi cùng hàng ghế với người lái, trừ trường hợp xe chỉ có một hàng ghế, hoặc không sử dụng thiết bị an toàn phù hợp cho trẻ em sẽ bị phạt từ 800.000 đồng đến 1 triệu đồng."
+          ],
+          "reference": "Nghị định bổ sung hình thức phạt cảnh cáo và bỏ mức phạt tiền 800.000–1.000.000 đồng cho hành vi này, với các điều kiện và ngoại lệ được nêu trong nghị định.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 2.047228040988557,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.7226369129961983,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999998
+        },
+        {
+          "case": 7,
+          "user_input": "Nghị định 238/2026/NĐ-CP có hiệu lực từ ngày nào?",
+          "response": "Nghị định 238/2026/NĐ-CP có hiệu lực thi hành từ ngày 15/8/2026 (Document 3).",
+          "retrieved_contexts": [
+            "Nghị định 238/2026/NĐ-CP quy định việc xử phạt vi phạm hành chính liên quan đến thiết bị ghi nhận hình ảnh người lái xe đối với xe ô tô kinh doanh vận tải hành khách dưới 08 chỗ (không kể chỗ của người lái xe), xe ô tô kinh doanh vận tải hàng hóa (trừ xe ô tô đầu kéo), xe vận tải nội bộ có hiệu lực thi hành từ ngày 01/01/2028.",
+            "\" rat,\nĐiều 38: Hiệu lực thi hành\n1. Nghị 'định này có hiệu lực thi hành từ ngày 01 tháng 01 năm 2025.\n2. Kể từ ñgày Nghị định này có hiệu lực thi hành, bãi bỏ các văn bản, điều,\nkhoản trong các văn bản và các quy định sau đây:\na) Nghị định số 109/2009/NĐ-CP ngày 01 tháng 12 năm 2009 của Chính\nphủ quy định tín hiệu của xe được quyền ưu tiên, Nghị định số 30/2024/NĐ-CP\nngày 07 tháng 3 năm 2024 của Chính phủ quy định về quản lý phương tiện giao",
+            "Nghị định số 238/2026/NĐ-CP bổ sung điểm n tại khoản 5 Điều 20 Nghị định số 168/2024/NĐ-CP về việc xử phạt đối với lái xe kinh doanh vận tải từ 08 chỗ trở lên không lắp thiết bị ghi nhận hình ảnh khoang chở khách",
+            "(6) Ké từ ngày 01/7/2026 khi Luật sửa đổi, bd sung một số điều của 10 Luật có liên\nquan đến an ninh, trật tự có hiệu lực thi hành thì ghi căn cứ vào Ludt này.\n|     |     | ụ c   đ íc h   đ | ầ u  n ố i .  |     |     |\n| --- | --- | ---------------- | ------------- | --- | --- |\n( 7 )  N ê u  r õ  m  phần theo quy định của Nghị định số 165/2024/NĐ-CP, |\nà n h\n| ( 8 | )  H ồ  s ơ  b ao |   g ồ m   c á c |   th |     |     |\n| --- | ----------------- | --------------- | ---- | --- | --- |",
+            "Xử phạt vi phạm hành chính liên quan đến thiết bị ghi nhận hình ảnh khoang chở khách có hiệu lực thi hành từ ngày 01/01/2029 và theo quy định của pháp luật về thiết bị ghi nhận hình ảnh khoang chở khách trên phương tiện giao thông đường bộ.\nNghị định này có hiệu lực thi hành từ ngày 15/8/2026.\nTheo Chinhphu.vn"
+          ],
+          "reference": "Từ ngày 15/8/2026.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md"
+          ],
+          "latency_seconds": 1.2981552500277758,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.8087637983939799,
+          "context_recall": 1.0,
+          "context_precision": 0.19999999998
+        },
+        {
+          "case": 8,
+          "user_input": "Mức phạt đối với hành vi làm thay đổi khả năng nhận diện biển số xe được nêu là bao nhiêu?",
+          "response": "Mức phạt đối với hành vi làm thay đổi khả năng nhận diện biển số xe là từ 20.000.000 đồng đến 26.000.000 đồng (Document 1).",
+          "retrieved_contexts": [
+            "Cụ thể, phạt tiền từ 20.000.000 đồng đến 26.000.000 đồng đối với hành vi điều khiển xe không gắn đủ biển số hoặc gắn biển số không đúng vị trí, không đúng quy cách theo quy định; gắn biển số không rõ chữ, số hoặc sơn, dán lên chữ, số của biển số xe; gắn biển số bị bẻ cong, che lấp, làm thay đổi chữ, số, màu sắc (của chữ, số, nền biển số xe), hình dạng, kích thước của biển số xe; sử dụng chất liệu, vật liệu, thiết bị làm thay đổi khả năng nhận diện thông tin biển số xe của phương tiện, thiết bị",
+            "Đồng thời, tại điểm m khoản 3 Điều 6, Nghị định 238/2026/NĐ-CP bỏ quy định phạt tiền từ 800.000 đồng đến 1.000.000 đồng đối với lái xe ô tô chở trẻ em không sử dụng thiết bị an toàn phù hợp theo quy định.\n## **Ngăn chặn hành vi làm thay đổi khả năng nhận diện biển số xe**",
+            "Nghị định số 238/2026/NĐ-CP sửa đổi, bổ sung điểm b khoản 8 Điều 13 Nghị định số 168/2024/NĐ-CP về việc xử phạt vi phạm quy định liên quan đến biển số xe theo hướng bổ sung phạt đối với hành vi điều khiển xe gắn biển số sử dụng vật liệu, thiết bị làm thay đổi khả năng nhận diện biển số của các thiết bị kỹ thuật nghiệp vụ.",
+            "1.  Phạt tiền từ 200.000 đồng đến 400.000 đồng đối với hành vi điều khiển xe\nkhông  có  kính  chăn  gió hoặc  có nhưng vỡ không  có tác  dụng  (đôi  với xe  có thiết\n\nkê  lắp  kính chan gió).\n\n2.  Phạt tiền từ 400.000  đồng  đến  600.000 đồng  đối  với  một  trong  các  hành\n\nvi vị phạm  sau  đây:",
+            "động quá phạm vi, tuyển đường, thời hạn cho phép;\n\nb)  Điêu  khién xe  (kê cả ro moóc và sơ mi  ro moóc)  không  gan  biên  sô  (đối\n\nvới  loại xe  có quy  định phải gan  biến  số).\n\n8.  Phat tiền từ 20.000.000  đồng  đến 26.000.000  đồng  đối với một trong  các\n\nhành vi vi phạm  sau  đây:\n\na) Điều khiển xe gắn biển số không đúng với chứng nhận đăng ký xe hoặc  gắn\n\nbiển số không  do cơ quan có thẩm quyền cấp (kê cả ro moóc và sơ mi ro moóc);"
+          ],
+          "reference": "Từ 20.000.000 đồng đến 26.000.000 đồng.",
+          "expected_source": "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+          "retrieved_sources": [
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "tu-15-8-phat-canh-cao-o-to-cho-tre-em-khong-co-thiet-bi-an-toan-phu-hop.md",
+            "nghi-dinh-168-2024-nd-cp.md",
+            "nghi-dinh-168-2024-nd-cp.md"
+          ],
+          "latency_seconds": 1.424032040988095,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5180969450297471,
+          "context_recall": 1.0,
+          "context_precision": 0.7555555555303703
+        },
+        {
+          "case": 9,
+          "user_input": "Theo đề xuất thay đổi cách tra cứu phạt nguội, cơ sở đăng kiểm sẽ tra cứu dữ liệu phương tiện vi phạm ở đâu?",
+          "response": "Theo đề xuất thay đổi cách tra cứu phạt nguội, cơ sở đăng kiểm sẽ tra cứu dữ liệu phương tiện vi phạm từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, thay vì phải kiểm tra dữ liệu trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay (Document 1).",
+          "retrieved_contexts": [
+            "Đề xuất thay đổi cách tra cứu 'phạt nguội'\n15/04/2026\n05:48\nĐặt lại–\n100%\n+\n## Dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, thay vì phải kiểm tra dữ liệu phạt nguội đồng thời trên trang tra cứu của Cục CSGT và Cục Đăng kiểm như hiện nay.\n![](https://s3-han02.fptcloud.com/cplqg-vn/ef1fea0b-bf0a-47e1-86e3-d8631f06b791.jpg?width=777&height=518)",
+            "# Đề xuất thay đổi cách tra cứu 'phạt nguội'\n\n**Source:** https://phapluat.gov.vn/tin-tuc/chinh-sach-moi/de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878\n\n**Crawled:** 2026-09-20T07:50:39.795624+00:00\n\n---",
+            "## Chỉ tra dữ liệu phương tiện vi phạm trên phần mềm Cục Đăng kiểm Việt Nam\nĐiểm nhấn đáng chú ý của dự thảo là quy định rõ: dữ liệu phương tiện vi phạm bị từ chối kiểm định là dữ liệu tra cứu từ phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam, theo quy định tại khoản 1 Điều 43 của Luật TTATGT đường bộ.",
+            "-\n\nb) Trường hợp khi tra cứu dữ liệu theo quy định tại  điểm  a khoản này nếu  có\nthông  tin  về phương  tiện  vi phạm, người  vi phạm  thì  chưa giải  quyết  việc đăng\nkiểm, đăng ký phương tiện vi phạm| chưa cấp, đi, cấp lại giấy phép lái xe đối với\nngười  vi phạm;",
+            "Ngoài ra, dự thảo Thông tư cũng bổ sung hướng dẫn xử lý trong trường hợp phần mềm tra cứu thông tin phương tiện vi phạm của Cục Đăng kiểm hoặc việc chia sẻ dữ liệu đăng ký xe từ cơ quan công an gặp sự cố bất khả kháng."
+          ],
+          "reference": "Trên phần mềm thông báo phương tiện vi phạm của Cục Đăng kiểm Việt Nam.",
+          "expected_source": "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+          "retrieved_sources": [
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "nghi-dinh-168-2024-nd-cp.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md"
+          ],
+          "latency_seconds": 2.261032792041078,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.4264193245255727,
+          "context_recall": 1.0,
+          "context_precision": 0.8041666666465626
+        },
+        {
+          "case": 10,
+          "user_input": "Nếu hệ thống vẫn thể hiện xe chưa hoàn thành khắc phục nhưng chủ xe có bằng chứng đã nộp phạt, cơ sở đăng kiểm có thể làm gì?",
+          "response": "Cơ sở đăng kiểm sẽ cập nhật các tài liệu mà chủ xe cung cấp lên hệ thống làm căn cứ và thực hiện kiểm định cho phương tiện (Document 1).",
+          "retrieved_contexts": [
+            "Đặc biệt, tại Điều 14 của dự thảo Thông tư về xử lý các trường hợp phát sinh, nêu rõ: nếu hệ thống thông tin phương tiện vi phạm của Cục Đăng kiểm vẫn thể hiện trạng thái \"chưa hoàn thành khắc phục\", nhưng chủ xe cung cấp được bằng chứng đã khắc phục (gồm biên bản, quyết định xử phạt và biên lai nộp phạt), thì cơ sở đăng kiểm sẽ cập nhật các tài liệu này lên hệ thống làm căn cứ và thực hiện kiểm định cho phương tiện.",
+            "Theo đó, cơ sở đăng kiểm vẫn thực hiện kiểm định theo quy định. Khi sự cố được khắc phục, nếu phát hiện phương tiện thuộc diện bị từ chối kiểm định, cơ sở đăng kiểm sẽ thông báo cho chủ xe, đồng thời thu hồi giấy chứng nhận và tem kiểm định. Nếu không thuộc diện bị từ chối, sẽ phát hành giấy chứng nhận và thông báo cho chủ xe.\n### Buộc tra cứu dữ liệu đăng ký xe khi tiếp nhận đăng kiểm",
+            "Theo các cơ sở đăng kiểm, quy định này tạo điều kiện thuận lợi tối đa cho người dân, doanh nghiệp. Thực tế thời gian qua, nhiều trường hợp đã nộp phạt nguội nhưng vẫn bị từ chối đăng kiểm do hệ thống chưa cập nhật, vẫn hiển thị trạng thái \"chưa xử phạt\".\nCục Đăng kiểm Việt Nam cho biết thêm, quy định mới thể hiện tinh thần lấy người dân làm trung tâm, minh bạch hóa quy trình xử lý, tránh việc từ chối kiểm định vô lý khi chủ xe đã hoàn thành nghĩa vụ nộp phạt, gây lãng phí thời gian và công sức.",
+            "_Nhiều trường hợp đã nộp phạt nguội nhưng vẫn bị từ chối đăng kiểm do hệ thống chưa cập nhật, vẫn hiển thị trạng thái \"chưa xử phạt\" - Ảnh: Báo XD._\nBộ Xây dựng đang lấy ý kiến góp ý cho dự thảo Thông tư quy định về: trình tự, thủ tục kiểm định và miễn kiểm định lần đầu đối với xe cơ giới, xe máy chuyên dùng; chứng nhận an toàn kỹ thuật và bảo vệ môi trường đối với phương tiện cải tạo; cũng như kiểm định khí thải đối với xe mô tô, xe gắn máy. Dự thảo này sẽ thay thế Thông tư 47/2024/TT-BGTVT.",
+            "Nếu dữ liệu đăng ký xe không phù hợp với dữ liệu của Cục Đăng kiểm, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và yêu cầu chủ xe liên hệ cơ quan đăng ký xe để xử lý.\nTrường hợp chủ xe xuất trình giấy tờ nhưng không tra cứu được dữ liệu hoặc dữ liệu không khớp, cơ sở đăng kiểm sẽ từ chối tiếp nhận hồ sơ và thông báo cho cơ quan công an để xử lý theo quy định."
+          ],
+          "reference": "Cơ sở đăng kiểm có thể cập nhật biên bản, quyết định xử phạt và biên lai nộp phạt lên hệ thống làm căn cứ và thực hiện kiểm định.",
+          "expected_source": "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+          "retrieved_sources": [
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md",
+            "de-xuat-thay-doi-cach-tra-cuu-phat-nguoi-1878.md"
+          ],
+          "latency_seconds": 1.5143831670284271,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.34059767453045003,
+          "context_recall": 1.0,
+          "context_precision": 0.999999999975
+        },
+        {
+          "case": 11,
+          "user_input": "Nghị định 241/2026/NĐ-CP phân cấp quản lý những quốc lộ nào cho UBND cấp tỉnh?",
+          "response": "Nghị định 241/2026/NĐ-CP phân cấp quản lý các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ cho Ủy ban nhân dân cấp tỉnh, bao gồm các quốc lộ trên địa bàn tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ (Document 1).",
+          "retrieved_contexts": [
+            "## Sửa đổi quy định về phân cấp quản lý quốc lộ\nTrong đó, Nghị định số 241/2026/NĐ-CP sửa đổi, bổ sung Điều 4 về phân cấp quản lý quốc lộ như sau:\n\"Điều 4. Phân cấp để Ủy ban nhân dân cấp tỉnh quản lý quốc lộ\n1. Các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ được phân cấp để Ủy ban nhân dân cấp tỉnh quản lý, bao gồm:\na) Quốc lộ trên địa bàn tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ quy định tại khoản 2 Điều này và Điều 6 Nghị định này;",
+            "Đồng thời, Nghị định số 241/2026/NĐ-CP sửa đổi, bổ sung Điều 7 quy định về điều chỉnh loại đường theo cấp quản lý như sau:\n''Điều 7. Điều chỉnh loại đưòng theo cấp quản lý\n1. Bộ Xây dựng quyết định điều chỉnh quốc lộ thành đường địa phương; đường địa phương và đường khác thành quốc lộ đối với các trường hợp sau:",
+            "2. Quốc lộ trong quy hoạch mạng lưới đường bộ không phân cấp gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân cấp quản lý:",
+            "7. Quốc lộ phân cấp cho Ủy ban nhân dân cấp tỉnh quản lý phải thực hiện điều chuyển tài sản kết cấu hạ tầng đường bộ theo quy định của pháp luật về quản lý, sử dụng tài sản công.\nĐối với trường hợp quy định tại khoản 6 Điều này, việc điều chuyển tài sản kết cấu hạ tầng đường bộ từ Ủy ban nhân dân cấp tỉnh về Bộ Xây dựng để quản lý được thực hiện sau khi Bộ Xây dựng có quyết định tiếp nhận lại quốc lộ đã phân cấp.",
+            "theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân\ncấp quản lý:\na) Thực hiện quản lý, đầu tư, xây dựng theo quy hoạch được duyệt; quyền,\ntrách nhiệm của cơ quan chủ quản đối với dựá n đầu tưx ây dựng quốc lộ được\nphân cấp quản lý trên địa bàn, trừ trường hợp dự án đầu tư giao Ủy ban nhân\ndân tỉnh, thành phố trực thuộc trung ương hoặc cơ quan khác là cơ quan chủ\nquản theo quy định của pháp luật có liên quan; thực hiện quyền, trách nhiệm"
+          ],
+          "reference": "Các tuyến quốc lộ thuộc quy hoạch mạng lưới đường bộ trên địa bàn tỉnh, thành phố, trừ các quốc lộ không phân cấp như Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ cao tốc và các trường hợp đặc biệt.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md"
+          ],
+          "latency_seconds": 1.8390929579618387,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.6140851076940583,
+          "context_recall": 1.0,
+          "context_precision": 0.999999999975
+        },
+        {
+          "case": 12,
+          "user_input": "Những quốc lộ nào được nêu là không phân cấp cho UBND cấp tỉnh?",
+          "response": "Các quốc lộ không được phân cấp cho Ủy ban nhân dân cấp tỉnh bao gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ (Document 1).",
+          "retrieved_contexts": [
+            "2. Quốc lộ trong quy hoạch mạng lưới đường bộ không phân cấp gồm: Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về bảo đảm quốc phòng, an ninh và các trường hợp khác theo quyết định của Thủ tướng Chính phủ.\n3. Trách nhiệm của Ủy ban nhân dân cấp tỉnh đối với quốc lộ được phân cấp quản lý:",
+            "Điều 1. Sửa đỗi, bé sung Điều 4\n\"Điều 4. Phân cấp dé Ủy ban nhân dân cấp tinh quản lý quốc lộ\n1. Các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ được\nphân cấp dé Ủy ban nhân dân cấp tinh quan lý, bao gồm:\na) Quốc lộ trên địa ban tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ\nquy định tại khoản 2 Điều này và Điều 6 Nghị định này;\nb) Các công trình, hạng mục thuộc kết cấu ha tầng đường bộ gắn với quốc\nlộ phân cấp quy định tại điểm a và điểm c khoản này;",
+            "## Sửa đổi quy định về phân cấp quản lý quốc lộ\nTrong đó, Nghị định số 241/2026/NĐ-CP sửa đổi, bổ sung Điều 4 về phân cấp quản lý quốc lộ như sau:\n\"Điều 4. Phân cấp để Ủy ban nhân dân cấp tỉnh quản lý quốc lộ\n1. Các tuyến đường quốc lộ thuộc quy hoạch mạng lưới đường bộ được phân cấp để Ủy ban nhân dân cấp tỉnh quản lý, bao gồm:\na) Quốc lộ trên địa bàn tỉnh, thành phố trực thuộc trung ương, trừ quốc lộ quy định tại khoản 2 Điều này và Điều 6 Nghị định này;",
+            "Uy ban nhân dân cấp tỉnh có trách nhiệm bé trí vốn và các nguồn lực bảo\nđảm thực hiện các quy định tại điểm a, điểm b và điểm c khoản 3 Điều này.\n6. Trường hợp không bảo đảm nguồn lực đầu tu, xây dựng, quản lý, vận\nhành, khai thác, bảo trì quốc lộ được phân cấp quản lý hoặc trường hợp cần\nthiết khác, Ủy ban nhân dân cấp tỉnh có văn bản đề nghị Bộ Xây dựng tiếp\nnhận lại quốc lộ đã phân cấp.\n7. Quốc lộ phân cấp cho Ủy ban nhân dân cấp tỉnh quản lý phải thực hiện",
+            "7. Quốc lộ phân cấp cho Ủy ban nhân dân cấp tỉnh quản lý phải thực hiện điều chuyển tài sản kết cấu hạ tầng đường bộ theo quy định của pháp luật về quản lý, sử dụng tài sản công.\nĐối với trường hợp quy định tại khoản 6 Điều này, việc điều chuyển tài sản kết cấu hạ tầng đường bộ từ Ủy ban nhân dân cấp tỉnh về Bộ Xây dựng để quản lý được thực hiện sau khi Bộ Xây dựng có quyết định tiếp nhận lại quốc lộ đã phân cấp."
+          ],
+          "reference": "Quốc lộ 1, Đường Hồ Chí Minh, quốc lộ có cấp kỹ thuật là đường cao tốc, quốc lộ có yêu cầu đặc biệt về quốc phòng an ninh và các trường hợp khác theo quyết định của Thủ tướng.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md"
+          ],
+          "latency_seconds": 1.7657997500500642,
+          "faithfulness": 0.8571428571428571,
+          "answer_relevancy": 0.4875723689001688,
+          "context_recall": 1.0,
+          "context_precision": 0.9999999999
+        },
+        {
+          "case": 13,
+          "user_input": "Cơ quan có thẩm quyền phải kiểm tra thành phần hồ sơ điều chỉnh loại đường trong bao lâu?",
+          "response": "Cơ quan có thẩm quyền phải kiểm tra thành phần hồ sơ điều chỉnh loại đường trong vòng 02 ngày làm việc kể từ ngày nhận được hồ sơ (Document 2).",
+          "retrieved_contexts": [
+            "3. Cục Đường bộ Việt Nam có trách nhiệm rà soát, lập 01 bộ hồ sơ đề nghị điều chỉnh loại đường liên quan đến quốc lộ và gửi đến cấp có thẩm quyền quy định tại khoản 1 Điều này để quyết định điều chỉnh loại đường theo cấp quản lý; Sở Xây dựng có trách nhiệm rà soát, lập 01 bộ hồ sơ đề nghị điều chỉnh giữa các loại đường địa phương và gửi đến cấp có thẩm quyền quy định tại khoản 2 Điều này để quyết định điều chỉnh loại đường theo cấp quản lý.\nThành phần hồ sơ bao gồm:",
+            "b) Trong thời hạn 07 ngày làm việc kể từ khi nhận đủ hồ sơ theo quy định, cơ quan có thẩm quyền giải quyết thủ tục hành chính tiến hành thẩm định hồ sơ, nếu đủ điều kiện thì ban hành Quyết định điều chỉnh loại đường theo cấp quản lý theo quy định tại Mẫu số 04 Phụ lục I kèm theo Nghị định này;\nc) Trả kết quả giải quyết thủ tục hành chính cho cơ quan, tổ chức bằng bản điện tử hợp lệ.",
+            "4. Cơ quan có thẩm quyền giải quyết thủ tục hành chính quy định tại khoản 1 và khoản 2 Điều này tiếp nhận, kiểm tra hồ sơ và xử lý như sau:\na) Trong vòng 02 ngày làm việc kể từ ngày nhận được hồ sơ, kiểm tra thành phần hồ sơ, nếu không đủ thành phần hồ sơ có văn bản thông báo đến cơ quan, tổ chức đề nghị để bổ sung, hoàn thiện;",
+            "dựng đường tránh theo quy định của pháp luật về xây dựng.\n4. Cơ quan có thấm quyền giải quyết thủ tục hành chính quy định tại khoản 1\nvà khoản 2 Điều này tiếp nhận, kiểm tra hồ sơ và xử lý như sau:\na) Trong vòng, 02 ngày làm việc ké từ ngày, nhận được hồ sơ, kiểm tra\nthành phần hỗ sơ, nếu không đú thành phần hỗ sơ có văn bản thông báo đến cơ\nquan, tổ chức đề nghị để bd sung, hoàn thiện; ;\nb) Trong |t hời hạn 07 ngày làm việc kể từ khi nhận đủ hỗ sơ theo quy định,",
+            "co quan có thâm quyền giải quyết thủ tục hành chính tiến hành thẩm định hồ\nsơ,n êu đủ điều kiện thì ban hành Quyết định điều chỉnh loại đường theo cấp\nquản lý theo quy định tại Mẫu số 04 Phụ lục I kèm theo Nghị định này;\nc) Trả kết quả giải quyết thủ tục hành chính cho cơ quan, tổ chức bằng bản\nđiện tử hợp lệ.\n5. Việc điều chuyển tài sản kết cấu hạ tầng đường bộ sau khi có quyết định\nđiều chỉnh loại đường của cơ quan, người có thẩm quyền theo quy định của"
+          ],
+          "reference": "Trong vòng 2 ngày làm việc kể từ ngày nhận hồ sơ.",
+          "expected_source": "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+          "retrieved_sources": [
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "sua-doi-mot-so-quy-dinh-ve-duong-quoc-lo-tram-dung-nghi.md",
+            "nghi-dinh-241-2026-nd-cp.md",
+            "nghi-dinh-241-2026-nd-cp.md"
+          ],
+          "latency_seconds": 1.5349524170160294,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5915660147744151,
+          "context_recall": 1.0,
+          "context_precision": 0.4777777777618519
+        },
+        {
+          "case": 14,
+          "user_input": "Nghị định 236/2026/NĐ-CP có quy định gì về thiết bị phát tín hiệu của xe ưu tiên?",
+          "response": "Nghị định 236/2026/NĐ-CP quy định về mẫu giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên, bao gồm các mẫu giấy phép cấp mới, cấp lại và báo cáo quản lý sử dụng thiết bị này (Document 1). Tuy nhiên, không có thông tin cụ thể nào về nội dung chi tiết của quy định này trong tài liệu được cung cấp.",
+          "retrieved_contexts": [
+            "N\nÑ\nSTRP h Nghị định số 236/2026/ND-CP\nxót3 Onan 6 năm 2026 của Chính phủ)\nMẫu số 02a Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\nVăn bản để nghị cấp mới/cấp lại giấy phép sử dụng thiết bị phát\nMẫu số 02b\ntin hiệu của xe ưu tiên\nSố thống kê, theo đối công tác cấp, thu hồi giấy phép sử dụng\nMẫu số 02c\nthiệt bị phát tín hiệu của xe ưu tiên\nBáo cáo việc quan lý, sử dung thiết bị phát tín hiệu của xe ưu\nMẫu số 02d\n,\ntiên",
+            "kỹ thuật quy định tại Phụ lục I kèm theo Nghị định nay;\nb) Đối với còi phát tín hiệu ưu tiên, tín hiệu được sử dụng theo yêu cầu kỹ\nthuật quy định tại Phụ lục 1 kèm theo Nghị định nay;\nc) Đối với cờ hiệu ưu tiên, yêu cầu kỹ thuật thực hiện theo quy định tại\nPhụ lục I kèm theo Nghị định nay.\n2. Tín hiệu được sử dụng đối với thiết bị phát tín hiệu của xe ưu tiên:\na) Tín hiệu xe chữa cháy của Cảnh sát phòng cháy, chữa cháy và cứu nạn,",
+            "theo quy định của Bộ trưởng Bộ Y tê.\n3. Trường hợp giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên bị hư\nhỏng, bị mất hoặc hết thời hạn sử dụng, cơ quan, tổ chức sử dụng xe ưu tiên có\nvăn bản đề nghị cấp lại giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\ntheo Mẫu số 02b Phụ lục H kèm theo Nghị định này.",
+            "Thiết bị phát tín hiệu của xe ưu tiên chỉ được sử dụng khi thực hiện nhiệm vụ và phải tuân thủ các quy định của pháp luật về trật tự, an toàn giao thông đường bộ.\nNghị định có hiệu lực thi hành từ 1/7/2026.\nTheo Chinhphu.vn",
+            "tín hiệu của xe ưu tiên.\nĐiều 22. Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên\n1. Hình thức, nội dung giấy phép sử dụng thiết bị phát tín hiệu của xe ưu\ntiên theo Mẫu số 02a Phụ lục H kèm theo Nghị định này.\n2. Thời hạn của giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên:\na) Không quá 05 năm kế từ ngày cấp và không được quá ngày hết niên hạn\nsử dụng của phương tiện;\nb) Giấy phép sử dụng thiết bị phát tín hiệu của xe ưu tiên cấp. cho xe ổi"
+          ],
+          "reference": "Chỉ được lắp trên các loại xe được quy định, phải có giấy phép sử dụng do cơ quan có thẩm quyền cấp và chỉ được sử dụng khi thực hiện nhiệm vụ.",
+          "expected_source": "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+          "retrieved_sources": [
+            "nghi-dinh-236-2026-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md",
+            "nghi-dinh-151-2024-nd-cp.md"
+          ],
+          "latency_seconds": 1.7255517079611309,
+          "faithfulness": 0.6666666666666666,
+          "answer_relevancy": 0.0,
+          "context_recall": 1.0,
+          "context_precision": 0.6791666666496875
+        },
+        {
+          "case": 15,
+          "user_input": "Luật Trật tự, an toàn giao thông đường bộ định nghĩa thiết bị an toàn cho trẻ em là gì?",
+          "response": "Theo Luật Trật tự, an toàn giao thông đường bộ, thiết bị an toàn cho trẻ em là thiết bị có khả năng bảo đảm an toàn cho trẻ ở tư thế ngồi hoặc nằm trên ô tô, được thiết kế nhằm giảm nguy cơ chấn thương khi xảy ra va chạm hoặc khi xe giảm tốc đột ngột bằng cách hạn chế sự di chuyển của cơ thể trẻ (Document 4).",
+          "retrieved_contexts": [
+            "Theo Luật Trật tự, an toàn giao thông đường bộ, từ ngày 1/7/2026, khi chở trẻ em dưới 10 tuổi và có chiều cao dưới 1,35 m trên ô tô, người lái xe không được bố trí trẻ ngồi cùng hàng ghế với người điều khiển, trừ trường hợp xe chỉ có một hàng ghế.\nCùng với đó, người điều khiển phương tiện có trách nhiệm sử dụng hoặc hướng dẫn sử dụng thiết bị an toàn phù hợp cho trẻ em.",
+            "Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7\n16/06/2026\n01:16\nĐặt lại–\n100%\n+\n![Quy định bắt buộc về thiết bị an toàn cho trẻ em trên ô tô từ 1/7](https://s3-han02.fptcloud.com/cplqg-vn/a31cf629-3db1-47a2-aa11-1f12e1324722.avif)\n**Từ ngày 1/7, ô tô cá nhân chở trẻ dưới 10 tuổi, cao dưới 1,35 m phải sử dụng thiết bị an toàn phù hợp. Không chỉ là chuyện mua một chiếc “ghế trẻ em”, phụ huynh cần chọn đúng loại, lắp đúng cách để bảo vệ trẻ và tránh bị xử phạt...**",
+            "**Thiết bị an toàn không chỉ là “ghế trẻ em”**\nNhiều người vẫn thường gọi chung là “ghế trẻ em”, tuy nhiên theo Quy chuẩn kỹ thuật quốc gia QCVN 123:2024/BGTVT, thiết bị an toàn cho trẻ em có phạm vi rộng hơn.\nTheo quy chuẩn này, thiết bị an toàn cho trẻ em là thiết bị có khả năng bảo đảm an toàn cho trẻ ở tư thế ngồi hoặc nằm trên ô tô, được thiết kế nhằm giảm nguy cơ chấn thương khi xảy ra va chạm hoặc khi xe giảm tốc đột ngột bằng cách hạn chế sự di chuyển của cơ thể trẻ.",
+            "13. Thiết bị an toàn cho trẻ em là thiết bị có đủ khả năng bảo đảm an toàn cho\ntrẻ em ở tư thế ngồi hoặc nằm trên xe ô tô, được thiết kế để giảm nguy cơ chấn\nthương cho người dùng trong trường hợp xảy ra va chạm hoặc xe ô tô giảm tốc độ\nđột ngột, bằng cách hạn chế sự di chuyển của cơ thể trẻ em.",
+            "**ISOFIX và i-Size là gì?**\nVới Hệ thống ghế trẻ em nâng cao ECRS, quy chuẩn đề cập đến hệ thống ghế trẻ em tích hợp ISOFIX toàn diện, còn gọi là i-Size, và hệ thống ghế trẻ em tích hợp ISOFIX dành cho xe đặc biệt.\nISOFIX là hệ thống giữ cố định thiết bị an toàn cho trẻ em lên ô tô bằng 2 neo cố định trên xe và 2 cơ cấu khóa tương ứng trên thiết bị an toàn cho trẻ em, kết hợp với cơ cấu chống xoay, chống lật."
+          ],
+          "reference": "Là thiết bị có khả năng bảo đảm an toàn cho trẻ ở tư thế ngồi hoặc nằm trên ô tô, được thiết kế để giảm nguy cơ chấn thương khi va chạm hoặc xe giảm tốc đột ngột bằng cách hạn chế sự di chuyển của cơ thể trẻ.",
+          "expected_source": "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+          "retrieved_sources": [
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md",
+            "luat-36-2024-qh15-trat-tu-an-toan-giao-thong.md",
+            "quy-dinh-bat-buoc-ve-thiet-bi-an-toan-cho-tre-em-tren-o-to-tu-1-7.md"
+          ],
+          "latency_seconds": 1.8397162500186823,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.5326409232331849,
+          "context_recall": 1.0,
+          "context_precision": 0.99999999998
+        },
+        {
+          "case": 16,
+          "user_input": "Theo Nghị định 151/2024/NĐ-CP, cơ sở dữ liệu giao thông có thể bao gồm những thông tin nào?",
+          "response": "Theo Nghị định 151/2024/NĐ-CP, cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ có thể bao gồm các thông tin như sau:\n\n1. Thông tin về sức khỏe của người lái xe, người điều khiển xe máy chuyên dùng do Bộ Y tế xây dựng, quản lý (Document 2).\n2. Thông tin từ các kết quả của quá trình thực hiện các thủ tục hành chính, xử lý vi phạm hành chính về trật tự, an toàn giao thông đường bộ và các hoạt động nghiệp vụ khác có liên quan (Document 5).\n3. Thông tin về bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ giới theo quy định của Chính phủ (Document 4).\n\nCác thông tin này được thu thập từ các cơ sở dữ liệu khác nhau theo quy định trong nghị định.",
+          "retrieved_contexts": [
+            "quan nhà nước và các quy định khác có liên quan. Các bộ, ngành thực hiện kết\nnổi, chia sẻ thông tin với Cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ\nthống nhất danh mục các trường dữ liệu chỉ tiết dựa trên thông tin quy định tại\nĐiều 11 Nghị định này\"..\nĐiều 6. Sữa đỗi, bd sung khoản 2, khoản 3 Điều 17\n\"2. Lắp đặt thiết bị phát tin hiệu của xe ưu tiên:\na) Xeô tô: Đèn phát tín hiệu ưu tiên lắp đặt trên nóc xe và có thể lắp thêm",
+            "giao thông đường bộ\n1. Cập nhật thông tin trong Cơ sở dữ liệu về trật tự, an toàn giao thông đường\nbộ bao gồm các hoạt động bé sung và điều chỉnh thông tin từ các nguôn sau:\na) Kết quả của quá trình thực hiện các thủ tục hành chính, xử lý vi phạm\nhành chính về trật tự, an toàn giao thông đường bộ và các hoạt động nghiệp vụ\nkhác có liên quan;\nb) Kết quả sửa đổi, bể sung của cơ quan, tổ chức, cá nhân khi có thay déi\nthéng tin hoặc phát hiện các thông tin trong Cơ sở đữ liệu về trật tự, an toàn",
+            "thập từ cơ sở dữ liệu¡ quy định tại điểm a, điểm b, điểm d, điểm đ khoản 1; điểm b\nkhoản 4; điểm b, điểm d khoản 5 Điều này.\n9. Thông tin quy định tại khoản 13 Điều 11 của Nghị định này được thu\nthập từ:\na) Cơ sở đữ liệu quy định tại điểm a, điểm đ khoản 1 Điều này;\nb) Cơ sở dit liệu về sức khỏe của người lái xe, người điều khiển xe máy\nchuyên dùng do Bộ Y tế xây dựng, quản lý.\nĐiều 13. Cập nhật thông tin trong Cơ sở dữ liệu về trật tự, an toàn\ngiao thông đường bộ",
+            "chuyên dùng do Bộ Y tế xây dựng, quan lý.\n4. Thông tin quy định tại khoản 8 Điều 11 của Nghị định này được thu thập từ:\na) Cơ sở dữ liệu quy định tại điểm a, điểm d, điểm đ khoản 1 Điều này;\nb) Cơ sở dữ liệu về bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ\ngiới theo quy định của Chính phủ về bao hiém bat buộc trách nhiệm dân sự của\nchủ xe cơ giới.\n5. Thông tin quy định tại khoản Ø Điều l1 của Nghi định này được thu thập từ:",
+            "Trong đó, Nghị định số 236/2026/NĐ-CP sửa đổi, bổ sung quy định cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ (khoản 1 Điều 9, một số điểm, khoản của Điều 10 của Nghị định số 151/2024/NĐ_CP) nhằm hoàn thiện hệ thống cơ sở dữ liệu về trật tự, an toàn giao thông đường bộ theo hướng đồng bộ, thống nhất trên phạm vi toàn quốc."
+          ],
+          "reference": "Có thể bao gồm thông tin đào tạo, sát hạch và cấp giấy phép lái xe; thông tin tai nạn, xử phạt vi phạm hành chính; cùng các thông tin quản lý phương tiện và người lái theo quy định.",
+          "expected_source": "nghi-dinh-151-2024-nd-cp.md",
+          "retrieved_sources": [
+            "nghi-dinh-236-2026-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "nghi-dinh-151-2024-nd-cp.md",
+            "sua-doi-bo-sung-mot-so-quy-dinh-ve-trat-tu-an-toan-giao-thong-duong-bo.md"
+          ],
+          "latency_seconds": 2.6143651669844985,
+          "faithfulness": 1.0,
+          "answer_relevancy": 0.6867600498594121,
+          "context_recall": 0.6666666666666666,
+          "context_precision": 0.5833333333041666
+        }
+      ]
+    }
+  },
+  "in_progress": {}
+}
